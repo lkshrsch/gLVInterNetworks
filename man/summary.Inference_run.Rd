@@ -12,7 +12,7 @@ summary.Inference_run(object, \dots)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{object}{
-Object of class Inference_run, as returned by \code{linear_Regression()} or \code{nonlinear_Regression()}
+Object of class Inference_run, as returned by \code{gLVlinearRegression()} or \code{nongLVlinearRegression()}
 }
   \item{\dots}{
 }
