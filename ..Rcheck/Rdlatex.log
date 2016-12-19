@@ -1,0 +1,506 @@
+Hmm ... looks like a package
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9)
+entering extended mode
+(Rd2.tex
+LaTeX2e <2016/03/31> patch level 2
+Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
+
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\book.cls"
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\bk10.clo"))
+ (C:/Users/hirschl/Documents/R/R-3.2.2/share/texmf/tex/latex\Rd.sty
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+)
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\longtable.
+sty")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\bm.sty")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\alltt.sty")
+
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\verbatim.s
+ty") ("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty
+")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\textcomp.st
+y"
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1enc.def"
+))
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\fontenc.sty
+" ("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.def
+"))
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\times.sty
+")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\inconsolata\zi4.
+sty" `inconsolata-zi4' v1.10, 2016/02/22 Text macros for Inconsolata (msharpe)
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.
+sty"))
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\color.s
+ty"
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\color.c
+fg")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pdftex-def\pdfte
+x.def"
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\infwa
+rerr.sty")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ltxcm
+ds.sty")))
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hyperre
+f.sty"
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\hobsu
+b-hyperref.sty"
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\hobsu
+b-generic.sty"))
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ifxetex\ifxete
+x.sty")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\auxhook
+.sty")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvoptio
+ns.sty")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\pd1enc.
+def")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\hyperre
+f.cfg"))
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hpdftex
+.def"
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\rerunfi
+lecheck.sty"))
+
+Package hyperref Warning: Option `hyperindex' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+
+Package hyperref Warning: Option `pagebackref' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+)
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\makeidx.sty
+")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\inputenc.st
+y" ("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def
+" ("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.dfu
+")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
+) ("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omsenc.df
+u")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1enc.dfu"
+))
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
+))
+Writing index file Rd2.idx
+No file Rd2.aux.
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
+)
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.
+mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+)
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref
+.sty"
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\getti
+tlestring.sty"))
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\inconsolata\t1zi
+4.fd")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
+) ("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def"
+)
+Underfull \hbox (badness 10000) in paragraph at lines 39--41
+
+[1{C:/Users/hirschl/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Overfull \hbox (139.38098pt too wide) in paragraph at lines 58--58
+ []\T1/zi4/m/n/9 data <- generate_data(species = 2, number_of_non_diagonal_coef
+ficients = 2, timepoints = 100, noise = 0.01, testData = 20)[] 
+
+Overfull \hbox (23.28098pt too wide) in paragraph at lines 69--69
+ []\T1/zi4/m/n/9 ## Not run: plotGraph(data, vsize = 0.2, main = "Original inte
+raction network", verbose = TRUE )[] 
+
+Overfull \hbox (15.18097pt too wide) in paragraph at lines 70--70
+ []\T1/zi4/m/n/9 ## Not run: plotGraph(nlr, vsize = 0.2, main = "Inferred inter
+action network", verbose = TRUE)[] 
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def")
+Overfull \hbox (40.78088pt too wide) in paragraph at lines 90--90
+ []\T1/zi4/m/n/10 generate_data(species, number_of_non_diagonal_coefficients, t
+imepoints, noise, testData)[] 
+[2] ("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.de
+f") [3]
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def")
+Overfull \hbox (657.78088pt too wide) in paragraph at lines 205--205
+ []\T1/zi4/m/n/10 nongLVlinearRegression(data, parms0 = NULL, ftol = 1e-8 , pto
+l = 1e-8, maxiter = 100, lowerbound = rep(-20,ncol(data$obs)*(ncol(data$obs)-1)
+), upperbound = rep(20,ncol(data$obs)*(ncol(data$obs)-1)), method = "Marq")[] 
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def")
+[4] ("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.de
+f") [5]
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def")
+Overfull \hbox (35.5562pt too wide) in paragraph at lines 359--361
+\T1/ptm/m/n/10 vari-able. The sen-si-tiv-ity ma-trix S_ij con-tains el-e-ments 
+dy_i/dpar_j*parscale_j/varscale_i.
+No file Rd2.ind.
+[6] (Rd2.aux)
+
+Package rerunfilecheck Warning: File `Rd2.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+(see the transcript file for additional information){C:/Users/hirschl/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}{C:/Users/hirschl/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/inconsolata/i4-t1-0.enc}<C:/Users
+/hirschl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/inconsolata/Incon
+solata-zi4r.pfb><C:/Users/hirschl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/urw/helvetic/uhvr8a.pfb><C:/Users/hirschl/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/urw/times/utmb8a.pfb><C:/Users/hirschl/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/hirschl/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/hirschl/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (6 pages, 103028 bytes).
+Transcript written on Rd2.log.
+This is makeindex, version 2.15 [TeX Live 2015] (kpathsea + Thai support).
+Scanning input file Rd2.idx....done (15 entries accepted, 0 rejected).
+Sorting entries....done (58 comparisons).
+Generating output file Rd2.ind....done (35 lines written, 0 warnings).
+Output written in Rd2.ind.
+Transcript written in Rd2.ilg.
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9)
+entering extended mode
+(Rd2.tex
+LaTeX2e <2016/03/31> patch level 2
+Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
+
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\book.cls"
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\bk10.clo"))
+ (C:/Users/hirschl/Documents/R/R-3.2.2/share/texmf/tex/latex\Rd.sty
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+)
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\longtable.
+sty")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\bm.sty")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\alltt.sty")
+
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\verbatim.s
+ty") ("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty
+")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\textcomp.st
+y"
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1enc.def"
+))
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\fontenc.sty
+" ("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.def
+"))
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\times.sty
+")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\inconsolata\zi4.
+sty" `inconsolata-zi4' v1.10, 2016/02/22 Text macros for Inconsolata (msharpe)
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.
+sty"))
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\color.s
+ty"
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\color.c
+fg")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pdftex-def\pdfte
+x.def"
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\infwa
+rerr.sty")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ltxcm
+ds.sty")))
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hyperre
+f.sty"
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\hobsu
+b-hyperref.sty"
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\hobsu
+b-generic.sty"))
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ifxetex\ifxete
+x.sty")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\auxhook
+.sty")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvoptio
+ns.sty")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\pd1enc.
+def")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\hyperre
+f.cfg"))
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hpdftex
+.def"
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\rerunfi
+lecheck.sty"))
+
+Package hyperref Warning: Option `hyperindex' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+
+Package hyperref Warning: Option `pagebackref' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+)
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\makeidx.sty
+")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\inputenc.st
+y" ("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def
+" ("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.dfu
+")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
+) ("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omsenc.df
+u")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1enc.dfu"
+))
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
+))
+Writing index file Rd2.idx
+(Rd2.aux)
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
+)
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.
+mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+)
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref
+.sty"
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\getti
+tlestring.sty")) (Rd2.out) (Rd2.out)
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\inconsolata\t1zi
+4.fd")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
+) (Rd2.toc)
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def")
+Underfull \hbox (badness 10000) in paragraph at lines 39--41
+
+[1{C:/Users/hirschl/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Overfull \hbox (139.38098pt too wide) in paragraph at lines 58--58
+ []\T1/zi4/m/n/9 data <- generate_data(species = 2, number_of_non_diagonal_coef
+ficients = 2, timepoints = 100, noise = 0.01, testData = 20)[] 
+
+Overfull \hbox (23.28098pt too wide) in paragraph at lines 69--69
+ []\T1/zi4/m/n/9 ## Not run: plotGraph(data, vsize = 0.2, main = "Original inte
+raction network", verbose = TRUE )[] 
+
+Overfull \hbox (15.18097pt too wide) in paragraph at lines 70--70
+ []\T1/zi4/m/n/9 ## Not run: plotGraph(nlr, vsize = 0.2, main = "Inferred inter
+action network", verbose = TRUE)[] 
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def")
+Overfull \hbox (40.78088pt too wide) in paragraph at lines 90--90
+ []\T1/zi4/m/n/10 generate_data(species, number_of_non_diagonal_coefficients, t
+imepoints, noise, testData)[] 
+[2] [3]
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def")
+Overfull \hbox (657.78088pt too wide) in paragraph at lines 205--205
+ []\T1/zi4/m/n/10 nongLVlinearRegression(data, parms0 = NULL, ftol = 1e-8 , pto
+l = 1e-8, maxiter = 100, lowerbound = rep(-20,ncol(data$obs)*(ncol(data$obs)-1)
+), upperbound = rep(20,ncol(data$obs)*(ncol(data$obs)-1)), method = "Marq")[] 
+[4] ("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.de
+f") ("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.de
+f") [5]
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def")
+[6]
+Overfull \hbox (35.5562pt too wide) in paragraph at lines 359--361
+\T1/ptm/m/n/10 vari-able. The sen-si-tiv-ity ma-trix S_ij con-tains el-e-ments 
+dy_i/dpar_j*parscale_j/varscale_i.
+(Rd2.ind [7]
+
+LaTeX Font Warning: Font shape `T1/zi4/m/it' undefined
+(Font)              using `T1/zi4/m/n' instead on input line 17.
+
+[8]) (Rd2.aux)
+
+Package rerunfilecheck Warning: File `Rd2.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ )
+(see the transcript file for additional information){C:/Users/hirschl/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}{C:/Users/hirschl/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/inconsolata/i4-t1-0.enc}<C:/Users
+/hirschl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/inconsolata/Incon
+solata-zi4r.pfb><C:/Users/hirschl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb><C:/Users/hirschl/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/hirschl/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/hirschl/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/hirschl/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/hirschl/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (8 pages, 119126 bytes).
+Transcript written on Rd2.log.
+This is makeindex, version 2.15 [TeX Live 2015] (kpathsea + Thai support).
+Scanning input file Rd2.idx....done (15 entries accepted, 0 rejected).
+Sorting entries....done (58 comparisons).
+Generating output file Rd2.ind....done (35 lines written, 0 warnings).
+Output written in Rd2.ind.
+Transcript written in Rd2.ilg.
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9)
+entering extended mode
+(Rd2.tex
+LaTeX2e <2016/03/31> patch level 2
+Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
+
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\book.cls"
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\bk10.clo"))
+ (C:/Users/hirschl/Documents/R/R-3.2.2/share/texmf/tex/latex\Rd.sty
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+)
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\longtable.
+sty")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\bm.sty")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\alltt.sty")
+
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\verbatim.s
+ty") ("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty
+")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\textcomp.st
+y"
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1enc.def"
+))
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\fontenc.sty
+" ("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.def
+"))
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\times.sty
+")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\inconsolata\zi4.
+sty" `inconsolata-zi4' v1.10, 2016/02/22 Text macros for Inconsolata (msharpe)
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.
+sty"))
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\color.s
+ty"
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\color.c
+fg")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pdftex-def\pdfte
+x.def"
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\infwa
+rerr.sty")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ltxcm
+ds.sty")))
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hyperre
+f.sty"
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\hobsu
+b-hyperref.sty"
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\hobsu
+b-generic.sty"))
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ifxetex\ifxete
+x.sty")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\auxhook
+.sty")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvoptio
+ns.sty")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\pd1enc.
+def")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\hyperre
+f.cfg"))
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hpdftex
+.def"
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\rerunfi
+lecheck.sty"))
+
+Package hyperref Warning: Option `hyperindex' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+
+Package hyperref Warning: Option `pagebackref' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+)
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\makeidx.sty
+")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\inputenc.st
+y" ("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def
+" ("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.dfu
+")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
+) ("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omsenc.df
+u")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1enc.dfu"
+))
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
+))
+Writing index file Rd2.idx
+(Rd2.aux)
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
+)
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.
+mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+)
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref
+.sty"
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\getti
+tlestring.sty")) (Rd2.out) (Rd2.out)
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\inconsolata\t1zi
+4.fd")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
+) (Rd2.toc)
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def")
+Underfull \hbox (badness 10000) in paragraph at lines 39--41
+
+[1{C:/Users/hirschl/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Overfull \hbox (139.38098pt too wide) in paragraph at lines 58--58
+ []\T1/zi4/m/n/9 data <- generate_data(species = 2, number_of_non_diagonal_coef
+ficients = 2, timepoints = 100, noise = 0.01, testData = 20)[] 
+
+Overfull \hbox (23.28098pt too wide) in paragraph at lines 69--69
+ []\T1/zi4/m/n/9 ## Not run: plotGraph(data, vsize = 0.2, main = "Original inte
+raction network", verbose = TRUE )[] 
+
+Overfull \hbox (15.18097pt too wide) in paragraph at lines 70--70
+ []\T1/zi4/m/n/9 ## Not run: plotGraph(nlr, vsize = 0.2, main = "Inferred inter
+action network", verbose = TRUE)[] 
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def")
+Overfull \hbox (40.78088pt too wide) in paragraph at lines 90--90
+ []\T1/zi4/m/n/10 generate_data(species, number_of_non_diagonal_coefficients, t
+imepoints, noise, testData)[] 
+[2] [3]
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def")
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def")
+Overfull \hbox (657.78088pt too wide) in paragraph at lines 205--205
+ []\T1/zi4/m/n/10 nongLVlinearRegression(data, parms0 = NULL, ftol = 1e-8 , pto
+l = 1e-8, maxiter = 100, lowerbound = rep(-20,ncol(data$obs)*(ncol(data$obs)-1)
+), upperbound = rep(20,ncol(data$obs)*(ncol(data$obs)-1)), method = "Marq")[] 
+[4] ("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.de
+f") ("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.de
+f") [5]
+("C:\Users\hirschl\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def")
+[6]
+Overfull \hbox (35.5562pt too wide) in paragraph at lines 359--361
+\T1/ptm/m/n/10 vari-able. The sen-si-tiv-ity ma-trix S_ij con-tains el-e-ments 
+dy_i/dpar_j*parscale_j/varscale_i.
+(Rd2.ind [7]
+
+LaTeX Font Warning: Font shape `T1/zi4/m/it' undefined
+(Font)              using `T1/zi4/m/n' instead on input line 17.
+
+[8]) (Rd2.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ )
+(see the transcript file for additional information){C:/Users/hirschl/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}{C:/Users/hirschl/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/inconsolata/i4-t1-0.enc}<C:/Users
+/hirschl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/inconsolata/Incon
+solata-zi4r.pfb><C:/Users/hirschl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb><C:/Users/hirschl/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/hirschl/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/hirschl/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/hirschl/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/hirschl/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (8 pages, 120217 bytes).
+Transcript written on Rd2.log.
+Saving output to 'gLVInterNetworks-manual.pdf' ...
+Done
+You may want to clean up by 'rm -rf C:/cygwin64/tmp/RtmpW4aa68/Rd2pdf12e06d802cd0'

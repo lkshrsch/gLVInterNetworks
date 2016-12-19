@@ -1,0 +1,289 @@
+
+R version 3.2.2 (2015-08-14) -- "Fire Safety"
+Copyright (C) 2015 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "gLVInterNetworks"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> options(pager = "console")
+> library('gLVInterNetworks')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("addNoise_res")
+> ### * addNoise_res
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: addNoise_res
+> ### Title: Add stochasticity to in silico generated data
+> ### Aliases: addNoise_res
+> ### Keywords: internal ~kwd2
+> 
+> ### ** Examples
+> 
+> ##---- Should be DIRECTLY executable !! ----
+> ##-- ==>  Define data, use random,
+> ##--	or do  help(data=index)  for the standard data sets.
+> 
+> ## The function is currently defined as
+> function (res, sd) 
++ {
++     noise <- matrix(rnorm(0, sd, n = length(res[, -1])), nrow = nrow(res), 
++         ncol = ncol(res[, -1]))
++     res[, -1] <- res[, -1] + noise
++     return(res)
++   }
+function (res, sd) 
+{
+    noise <- matrix(rnorm(0, sd, n = length(res[, -1])), nrow = nrow(res), 
+        ncol = ncol(res[, -1]))
+    res[, -1] <- res[, -1] + noise
+    return(res)
+}
+> 
+> 
+> 
+> cleanEx()
+> nameEx("assessment")
+> ### * assessment
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: assessment
+> ### Title: Assess results from inference algorithm
+> ### Aliases: assessment
+> ### Keywords: internal ~kwd2
+> 
+> ### ** Examples
+> 
+> ##---- Should be DIRECTLY executable !! ----
+> ##-- ==>  Define data, use random,
+> ##--	or do  help(data=index)  for the standard data sets.
+> 
+> ## The function is currently defined as
+> function (result, Parms) 
++ {
++     "still need to check how many zeros are in Parms and correct for qualitative..."
++     quantitative <- correctly_intervalized_estimates(c(result$Parms), 
++         c(result$SE), c(Parms))
++     quantitative <- sum(quantitative)/length(quantitative)
++     qualitative <- compare_matrix(c(result$Parms), c(Parms))
++     qualitative <- sum(qualitative)/length(qualitative)
++     is_not_significant <- correctly_intervalized_estimates(c(result$Parms), 
++         c(result$SE), rep(0, length(Parms)))
++     is_zero <- c(Parms) == 0
++     qualitative2 <- is_not_significant == is_zero
++     qualitative2 <- sum(qualitative2)/length(qualitative2)
++     result$quantitative = quantitative
++     result$qualitative1 = qualitative
++     result$qualitative2 = qualitative2
++     return(result)
++   }
+function (result, Parms) 
+{
+    "still need to check how many zeros are in Parms and correct for qualitative..."
+    quantitative <- correctly_intervalized_estimates(c(result$Parms), 
+        c(result$SE), c(Parms))
+    quantitative <- sum(quantitative)/length(quantitative)
+    qualitative <- compare_matrix(c(result$Parms), c(Parms))
+    qualitative <- sum(qualitative)/length(qualitative)
+    is_not_significant <- correctly_intervalized_estimates(c(result$Parms), 
+        c(result$SE), rep(0, length(Parms)))
+    is_zero <- c(Parms) == 0
+    qualitative2 <- is_not_significant == is_zero
+    qualitative2 <- sum(qualitative2)/length(qualitative2)
+    result$quantitative = quantitative
+    result$qualitative1 = qualitative
+    result$qualitative2 = qualitative2
+    return(result)
+}
+> 
+> 
+> 
+> cleanEx()
+> nameEx("compare_matrix")
+> ### * compare_matrix
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: compare_matrix
+> ### Title: Compare two interaction matrices
+> ### Aliases: compare_matrix
+> ### Keywords: internal ~kwd2
+> 
+> ### ** Examples
+> 
+> ##---- Should be DIRECTLY executable !! ----
+> ##-- ==>  Define data, use random,
+> ##--	or do  help(data=index)  for the standard data sets.
+> 
+> ## The function is currently defined as
+> function (a, b) 
++ {
++     av = c(a)
++     bv = c(b)
++     for (i in 1:length(av)) {
++         av[i] = interaction_compare(av[i], bv[i])
++     }
++     return(av)
++   }
+function (a, b) 
+{
+    av = c(a)
+    bv = c(b)
+    for (i in 1:length(av)) {
+        av[i] = interaction_compare(av[i], bv[i])
+    }
+    return(av)
+}
+> 
+> 
+> 
+> cleanEx()
+> nameEx("correctly_intervalized_estimates")
+> ### * correctly_intervalized_estimates
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: correctly_intervalized_estimates
+> ### Title: Check if confidence intervals of parameter estimates contain
+> ###   true coefficients
+> ### Aliases: correctly_intervalized_estimates
+> ### Keywords: internal ~kwd2
+> 
+> ### ** Examples
+> 
+> ##---- Should be DIRECTLY executable !! ----
+> ##-- ==>  Define data, use random,
+> ##--	or do  help(data=index)  for the standard data sets.
+> 
+> ## The function is currently defined as
+> function (background, SE, Parms) 
++ {
++     CI95 <- SE * 2
++     up_estimates <- background + CI95
++     down_estimates <- background - CI95
++     return(down_estimates < c(Parms) & c(Parms) < up_estimates)
++   }
+function (background, SE, Parms) 
+{
+    CI95 <- SE * 2
+    up_estimates <- background + CI95
+    down_estimates <- background - CI95
+    return(down_estimates < c(Parms) & c(Parms) < up_estimates)
+}
+> 
+> 
+> 
+> cleanEx()
+> nameEx("discrete")
+> ### * discrete
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: discrete
+> ### Title: Function to discretize in silico generated data
+> ### Aliases: discrete
+> ### Keywords: internal ~kwd2
+> 
+> ### ** Examples
+> 
+> ##---- Should be DIRECTLY executable !! ----
+> ##-- ==>  Define data, use random,
+> ##--	or do  help(data=index)  for the standard data sets.
+> 
+> ## The function is currently defined as
+> function (observations, n) 
++ {
++     "make realistic observations by discretization of simulated data."
++     result <- observations[seq(1, nrow(observations), by = n), 
++         ]
++     return(result)
++   }
+function (observations, n) 
+{
+    "make realistic observations by discretization of simulated data."
+    result <- observations[seq(1, nrow(observations), by = n), 
+        ]
+    return(result)
+}
+> 
+> 
+> 
+> cleanEx()
+> nameEx("draw_interaction_network")
+> ### * draw_interaction_network
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: draw_interaction_network
+> ### Title: Add stochasticity to in silico generated data
+> ### Aliases: draw_interaction_network
+> ### Keywords: internal ~kwd2
+> 
+> ### ** Examples
+> 
+> ##---- Should be DIRECTLY executable !! ----
+> ##-- ==>  Define data, use random,
+> ##--	or do  help(data=index)  for the standard data sets.
+> 
+> ## The function is currently defined as
+> function(network, main=NULL){
++   
++   igraph::plot.igraph(network,layout = igraph::layout.fruchterman.reingold , 
++ vertex.label.color="black",edge.color="black", edge.curved=TRUE, main=main)
++   
++ }
+function (network, main = NULL) 
+{
+    igraph::plot.igraph(network, layout = igraph::layout.fruchterman.reingold, 
+        vertex.label.color = "black", edge.color = "black", edge.curved = TRUE, 
+        main = main)
+}
+> 
+> 
+> 
+> cleanEx()
+> nameEx("gLVInterNetworks-package")
+> ### * gLVInterNetworks-package
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: gLVInterNetworks-package
+> ### Title: Inference of interaction networks based on generalised Lotka
+> ###   Volterra dynamics
+> ### Aliases: gLVInterNetworks-package gLVInterNetworks
+> ### Keywords: package
+> 
+> ### ** Examples
+> 
+> library(gLVInterNetworks)
+> data <- generate_data(species = 2, number_of_non_diagonal_coefficients = 2, timepoints = 100, noise = 0.01, testData = 20)
+DLSODA-  At T(=R1) and step size H(=R2), the error
+      test failed repeatedly or with ABS(H) = HMIN
+In above message, R1 = 3.22358, R2 = 1e-07
+ 
+> ## Not run: plot(data, type = "l")
+> lr <- gLVlinearRegression(data, regularization = TRUE, alpha = 0)
+> ## Not run: summary(lr)
+> ## Not run: plot(lr, type = "l")
+> ## Not run: points(data)
+> nlr <- nongLVlinearRegression(data, parms0 = lr$Parms)
+Error: could not find function "nongLVlinearRegression"
+Execution halted

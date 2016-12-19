@@ -1,0 +1,16 @@
+* installing *source* package 'gLVInterNetworks' ...
+** R
+** preparing package for lazy loading
+** help
+Warnung: C:/Users/hirschl/Documents/gLVInterNetworks/man/gLVInterNetworks-package.Rd:24: All text must be in a section
+Warnung: C:/Users/hirschl/Documents/gLVInterNetworks/man/gLVlinearRegression.Rd:8: unknown macro '\delta'
+Warnung: C:/Users/hirschl/Documents/gLVInterNetworks/man/gLVlinearRegression.Rd:8: unknown macro '\alpha'
+Warnung: C:/Users/hirschl/Documents/gLVInterNetworks/man/gLVlinearRegression.Rd:8: unknown macro '\sum'
+Warnung: C:/Users/hirschl/Documents/gLVInterNetworks/man/gLVlinearRegression.Rd:8: unknown macro '\beta'
+Warnung: C:/Users/hirschl/Documents/gLVInterNetworks/man/regularized_linear_regression.Rd: Only one \arguments section is allowed: the first will be used
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded
+*** arch - i386
+*** arch - x64
+* DONE (gLVInterNetworks)

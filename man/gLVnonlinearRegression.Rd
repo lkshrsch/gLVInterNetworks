@@ -1,5 +1,5 @@
-\name{nongLVlinearRegression}
-\alias{nongLVlinearRegression}
+\name{gLVnonlinearRegression}
+\alias{gLVnonlinearRegression}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Parameter estimation through gradient search of continuous nonlinear gLV model}
@@ -7,7 +7,7 @@ Parameter estimation through gradient search of continuous nonlinear gLV model}
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-nongLVlinearRegression(data, parms0 = NULL, ftol = 1e-8 , ptol = 1e-8, maxiter = 100, lowerbound = rep(-20,ncol(data$obs)*(ncol(data$obs)-1)), upperbound = rep(20,ncol(data$obs)*(ncol(data$obs)-1)), method = "Marq")
+gLVnonlinearRegression(data, parms0 = NULL, ftol = 1e-8 , ptol = 1e-8, maxiter = 100, lowerbound = rep(-20,ncol(data$obs)*(ncol(data$obs)-1)), upperbound = rep(20,ncol(data$obs)*(ncol(data$obs)-1)), method = "Marq")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

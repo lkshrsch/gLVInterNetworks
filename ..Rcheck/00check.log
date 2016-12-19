@@ -1,0 +1,347 @@
+* using log directory 'C:/Users/hirschl/Documents/gLVInterNetworks/..Rcheck'
+* using R version 3.2.2 (2015-08-14)
+* using platform: x86_64-w64-mingw32 (64-bit)
+* using session charset: ISO8859-1
+* checking for file './DESCRIPTION' ... OK
+* checking extension type ... Package
+* this is package 'gLVInterNetworks' version '0.1'
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... NOTE
+Found the following hidden files and directories:
+  R/.Rhistory
+  ..Rcheck
+  .git
+  R/.Rproj.user
+These were most likely included in error. See section 'Package
+structure' in the 'Writing R Extensions' manual.
+* checking for portable file names ... OK
+* checking whether package 'gLVInterNetworks' can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking DESCRIPTION meta-information ... NOTE
+Malformed Description field: should contain one or more complete sentences.
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... WARNING
+Found the following directory with the name of a check directory:
+  ./..Rcheck
+Most likely, these were included erroneously.
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking dependencies in R code ... NOTE
+Namespaces in Imports field not imported from:
+  'coda' 'minqa' 'rootSolve'
+  All declared Imports should be used.
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... NOTE
+inSilico_bio: no visible global function definition for 'solveLV_event'
+inSilico_bio: no visible binding for global variable 'lambda'
+inSilico_bio: no visible global function definition for 'S'
+inSilico_bio: no visible global function definition for
+  'solveLV_bio_linear'
+modfit_pars_estimate_MLE_sequential : ModelCost_linear: no visible
+  binding for global variable 'x'
+* checking Rd files ... WARNING
+prepare_Rd: R_squared.Rd:20-22: Dropping empty section \details
+prepare_Rd: R_squared.Rd:23-29: Dropping empty section \value
+prepare_Rd: R_squared.Rd:36-38: Dropping empty section \note
+prepare_Rd: R_squared.Rd:33-35: Dropping empty section \author
+prepare_Rd: R_squared.Rd:30-32: Dropping empty section \references
+prepare_Rd: R_squared.Rd:42-44: Dropping empty section \seealso
+prepare_Rd: R_squared.Rd:45-46: Dropping empty section \examples
+prepare_Rd: addNoise_res.Rd:20-22: Dropping empty section \details
+prepare_Rd: addNoise_res.Rd:23-29: Dropping empty section \value
+prepare_Rd: addNoise_res.Rd:36-38: Dropping empty section \note
+prepare_Rd: addNoise_res.Rd:33-35: Dropping empty section \author
+prepare_Rd: addNoise_res.Rd:30-32: Dropping empty section \references
+prepare_Rd: addNoise_res.Rd:42-44: Dropping empty section \seealso
+prepare_Rd: assessment.Rd:23-25: Dropping empty section \details
+prepare_Rd: assessment.Rd:38-40: Dropping empty section \note
+prepare_Rd: assessment.Rd:35-37: Dropping empty section \author
+prepare_Rd: assessment.Rd:32-34: Dropping empty section \references
+prepare_Rd: assessment.Rd:44-46: Dropping empty section \seealso
+prepare_Rd: compare_matrix.Rd:21-23: Dropping empty section \details
+prepare_Rd: compare_matrix.Rd:24-30: Dropping empty section \value
+prepare_Rd: compare_matrix.Rd:37-39: Dropping empty section \note
+prepare_Rd: compare_matrix.Rd:34-36: Dropping empty section \author
+prepare_Rd: compare_matrix.Rd:31-33: Dropping empty section \references
+prepare_Rd: compare_matrix.Rd:43-45: Dropping empty section \seealso
+prepare_Rd: correctly_intervalized_estimates.Rd:6-8: Dropping empty section \description
+prepare_Rd: correctly_intervalized_estimates.Rd:24-26: Dropping empty section \details
+prepare_Rd: correctly_intervalized_estimates.Rd:27-33: Dropping empty section \value
+prepare_Rd: correctly_intervalized_estimates.Rd:40-42: Dropping empty section \note
+prepare_Rd: correctly_intervalized_estimates.Rd:37-39: Dropping empty section \author
+prepare_Rd: correctly_intervalized_estimates.Rd:34-36: Dropping empty section \references
+prepare_Rd: correctly_intervalized_estimates.Rd:46-48: Dropping empty section \seealso
+checkRd: (5) correctly_intervalized_estimates.Rd:0-67: Must have a \description
+prepare_Rd: discrete.Rd:6-8: Dropping empty section \description
+prepare_Rd: discrete.Rd:21-23: Dropping empty section \details
+prepare_Rd: discrete.Rd:24-30: Dropping empty section \value
+prepare_Rd: discrete.Rd:37-39: Dropping empty section \note
+prepare_Rd: discrete.Rd:34-36: Dropping empty section \author
+prepare_Rd: discrete.Rd:31-33: Dropping empty section \references
+prepare_Rd: discrete.Rd:43-45: Dropping empty section \seealso
+checkRd: (5) discrete.Rd:0-64: Must have a \description
+prepare_Rd: draw_interaction_network.Rd:6-8: Dropping empty section \description
+prepare_Rd: draw_interaction_network.Rd:21-23: Dropping empty section \details
+prepare_Rd: draw_interaction_network.Rd:24-30: Dropping empty section \value
+prepare_Rd: draw_interaction_network.Rd:37-39: Dropping empty section \note
+prepare_Rd: draw_interaction_network.Rd:34-36: Dropping empty section \author
+prepare_Rd: draw_interaction_network.Rd:31-33: Dropping empty section \references
+prepare_Rd: draw_interaction_network.Rd:43-45: Dropping empty section \seealso
+checkRd: (5) draw_interaction_network.Rd:0-63: Must have a \description
+prepare_Rd: gLVInterNetworks-package.Rd:24: All text must be in a section
+prepare_Rd: gLVInterNetworks-package.Rd:26-27: Dropping empty section \seealso
+prepare_Rd: gLVlinearRegression.Rd:8: unknown macro '\delta'
+prepare_Rd: gLVlinearRegression.Rd:8: unknown macro '\alpha'
+prepare_Rd: gLVlinearRegression.Rd:8: unknown macro '\sum'
+prepare_Rd: gLVlinearRegression.Rd:8: unknown macro '\beta'
+prepare_Rd: gLVlinearRegression.Rd:52: Dropping empty section \keyword
+prepare_Rd: gLVlinearRegression.Rd:26-32: Dropping empty section \value
+prepare_Rd: gLVlinearRegression.Rd:39-41: Dropping empty section \note
+prepare_Rd: gLVlinearRegression.Rd:36-38: Dropping empty section \author
+prepare_Rd: gLVlinearRegression.Rd:33-35: Dropping empty section \references
+prepare_Rd: gLVlinearRegression.Rd:45-47: Dropping empty section \seealso
+prepare_Rd: gLVlinearRegression.Rd:48-49: Dropping empty section \examples
+prepare_Rd: gLVnonlinearRegression.Rd:64: Dropping empty section \keyword
+prepare_Rd: gLVnonlinearRegression.Rd:6-8: Dropping empty section \description
+prepare_Rd: gLVnonlinearRegression.Rd:34-36: Dropping empty section \details
+prepare_Rd: gLVnonlinearRegression.Rd:37-43: Dropping empty section \value
+prepare_Rd: gLVnonlinearRegression.Rd:50-52: Dropping empty section \note
+prepare_Rd: gLVnonlinearRegression.Rd:47-49: Dropping empty section \author
+prepare_Rd: gLVnonlinearRegression.Rd:44-46: Dropping empty section \references
+prepare_Rd: gLVnonlinearRegression.Rd:54-56: Dropping empty section \seealso
+checkRd: (5) gLVnonlinearRegression.Rd:0-66: Must have a \description
+prepare_Rd: generate_data.Rd:31-33: Dropping empty section \details
+prepare_Rd: generate_data.Rd:48-50: Dropping empty section \note
+prepare_Rd: generate_data.Rd:42-44: Dropping empty section \references
+prepare_Rd: generate_data.Rd:54-56: Dropping empty section \seealso
+prepare_Rd: generate_interaction_network.Rd:6-8: Dropping empty section \description
+prepare_Rd: generate_interaction_network.Rd:36-38: Dropping empty section \details
+prepare_Rd: generate_interaction_network.Rd:39-45: Dropping empty section \value
+prepare_Rd: generate_interaction_network.Rd:52-54: Dropping empty section \note
+prepare_Rd: generate_interaction_network.Rd:49-51: Dropping empty section \author
+prepare_Rd: generate_interaction_network.Rd:46-48: Dropping empty section \references
+prepare_Rd: generate_interaction_network.Rd:56-58: Dropping empty section \seealso
+checkRd: (5) generate_interaction_network.Rd:0-68: Must have a \description
+prepare_Rd: inSilico_bio.Rd:6-8: Dropping empty section \description
+prepare_Rd: inSilico_bio.Rd:30-32: Dropping empty section \details
+prepare_Rd: inSilico_bio.Rd:33-39: Dropping empty section \value
+prepare_Rd: inSilico_bio.Rd:46-48: Dropping empty section \note
+prepare_Rd: inSilico_bio.Rd:43-45: Dropping empty section \author
+prepare_Rd: inSilico_bio.Rd:40-42: Dropping empty section \references
+prepare_Rd: inSilico_bio.Rd:52-54: Dropping empty section \seealso
+checkRd: (5) inSilico_bio.Rd:0-112: Must have a \description
+prepare_Rd: interaction_compare.Rd:6-8: Dropping empty section \description
+prepare_Rd: interaction_compare.Rd:21-23: Dropping empty section \details
+prepare_Rd: interaction_compare.Rd:24-30: Dropping empty section \value
+prepare_Rd: interaction_compare.Rd:37-39: Dropping empty section \note
+prepare_Rd: interaction_compare.Rd:34-36: Dropping empty section \author
+prepare_Rd: interaction_compare.Rd:31-33: Dropping empty section \references
+prepare_Rd: interaction_compare.Rd:43-45: Dropping empty section \seealso
+checkRd: (5) interaction_compare.Rd:0-72: Must have a \description
+prepare_Rd: log_slope_luk.Rd:6-8: Dropping empty section \description
+prepare_Rd: log_slope_luk.Rd:21-23: Dropping empty section \details
+prepare_Rd: log_slope_luk.Rd:24-30: Dropping empty section \value
+prepare_Rd: log_slope_luk.Rd:37-39: Dropping empty section \note
+prepare_Rd: log_slope_luk.Rd:34-36: Dropping empty section \author
+prepare_Rd: log_slope_luk.Rd:31-33: Dropping empty section \references
+prepare_Rd: log_slope_luk.Rd:43-45: Dropping empty section \seealso
+checkRd: (5) log_slope_luk.Rd:0-64: Must have a \description
+prepare_Rd: modfit_pars_estimate_MLE_sequential.Rd:6-8: Dropping empty section \description
+prepare_Rd: modfit_pars_estimate_MLE_sequential.Rd:40-42: Dropping empty section \details
+prepare_Rd: modfit_pars_estimate_MLE_sequential.Rd:43-49: Dropping empty section \value
+prepare_Rd: modfit_pars_estimate_MLE_sequential.Rd:56-58: Dropping empty section \note
+prepare_Rd: modfit_pars_estimate_MLE_sequential.Rd:53-55: Dropping empty section \author
+prepare_Rd: modfit_pars_estimate_MLE_sequential.Rd:50-52: Dropping empty section \references
+prepare_Rd: modfit_pars_estimate_MLE_sequential.Rd:60-62: Dropping empty section \seealso
+checkRd: (5) modfit_pars_estimate_MLE_sequential.Rd:0-72: Must have a \description
+prepare_Rd: obs2data_bio.Rd:6-8: Dropping empty section \description
+prepare_Rd: obs2data_bio.Rd:18-20: Dropping empty section \details
+prepare_Rd: obs2data_bio.Rd:21-27: Dropping empty section \value
+prepare_Rd: obs2data_bio.Rd:34-36: Dropping empty section \note
+prepare_Rd: obs2data_bio.Rd:31-33: Dropping empty section \author
+prepare_Rd: obs2data_bio.Rd:28-30: Dropping empty section \references
+prepare_Rd: obs2data_bio.Rd:40-42: Dropping empty section \seealso
+checkRd: (5) obs2data_bio.Rd:0-65: Must have a \description
+prepare_Rd: parameter_matrix.Rd:6-8: Dropping empty section \description
+prepare_Rd: parameter_matrix.Rd:21-23: Dropping empty section \details
+prepare_Rd: parameter_matrix.Rd:24-30: Dropping empty section \value
+prepare_Rd: parameter_matrix.Rd:37-39: Dropping empty section \note
+prepare_Rd: parameter_matrix.Rd:34-36: Dropping empty section \author
+prepare_Rd: parameter_matrix.Rd:31-33: Dropping empty section \references
+prepare_Rd: parameter_matrix.Rd:43-45: Dropping empty section \seealso
+checkRd: (5) parameter_matrix.Rd:0-63: Must have a \description
+prepare_Rd: plot.Inference_run.Rd:6-8: Dropping empty section \description
+prepare_Rd: plot.Inference_run.Rd:20-22: Dropping empty section \details
+prepare_Rd: plot.Inference_run.Rd:23-29: Dropping empty section \value
+prepare_Rd: plot.Inference_run.Rd:36-38: Dropping empty section \note
+prepare_Rd: plot.Inference_run.Rd:33-35: Dropping empty section \author
+prepare_Rd: plot.Inference_run.Rd:30-32: Dropping empty section \references
+prepare_Rd: plot.Inference_run.Rd:42-44: Dropping empty section \seealso
+checkRd: (5) plot.Inference_run.Rd:0-60: Must have a \description
+prepare_Rd: plot.Sim_data.Rd:62: Dropping empty section \keyword
+prepare_Rd: plot.Sim_data.Rd:6-8: Dropping empty section \description
+prepare_Rd: plot.Sim_data.Rd:24-26: Dropping empty section \details
+prepare_Rd: plot.Sim_data.Rd:27-33: Dropping empty section \value
+prepare_Rd: plot.Sim_data.Rd:40-42: Dropping empty section \note
+prepare_Rd: plot.Sim_data.Rd:37-39: Dropping empty section \author
+prepare_Rd: plot.Sim_data.Rd:34-36: Dropping empty section \references
+prepare_Rd: plot.Sim_data.Rd:46-48: Dropping empty section \seealso
+checkRd: (5) plot.Sim_data.Rd:0-63: Must have a \description
+prepare_Rd: plotGraph.Rd:67: Dropping empty section \keyword
+prepare_Rd: plotGraph.Rd:32-34: Dropping empty section \details
+prepare_Rd: plotGraph.Rd:49-51: Dropping empty section \note
+prepare_Rd: plotGraph.Rd:43-45: Dropping empty section \references
+prepare_Rd: plotGraph.Rd:55-57: Dropping empty section \seealso
+prepare_Rd: points.Sim_data.Rd:6-8: Dropping empty section \description
+prepare_Rd: points.Sim_data.Rd:21-23: Dropping empty section \details
+prepare_Rd: points.Sim_data.Rd:24-30: Dropping empty section \value
+prepare_Rd: points.Sim_data.Rd:37-39: Dropping empty section \note
+prepare_Rd: points.Sim_data.Rd:34-36: Dropping empty section \author
+prepare_Rd: points.Sim_data.Rd:31-33: Dropping empty section \references
+prepare_Rd: points.Sim_data.Rd:43-45: Dropping empty section \seealso
+checkRd: (5) points.Sim_data.Rd:0-67: Must have a \description
+prepare_Rd: prediction.Rd:22-24: Dropping empty section \details
+prepare_Rd: prediction.Rd:25-31: Dropping empty section \value
+prepare_Rd: prediction.Rd:38-40: Dropping empty section \note
+prepare_Rd: prediction.Rd:35-37: Dropping empty section \author
+prepare_Rd: prediction.Rd:32-34: Dropping empty section \references
+prepare_Rd: prediction.Rd:44-46: Dropping empty section \seealso
+prepare_Rd: print.summary.Inference_run.Rd:6-8: Dropping empty section \description
+prepare_Rd: print.summary.Inference_run.Rd:20-22: Dropping empty section \details
+prepare_Rd: print.summary.Inference_run.Rd:23-29: Dropping empty section \value
+prepare_Rd: print.summary.Inference_run.Rd:36-38: Dropping empty section \note
+prepare_Rd: print.summary.Inference_run.Rd:33-35: Dropping empty section \author
+prepare_Rd: print.summary.Inference_run.Rd:30-32: Dropping empty section \references
+prepare_Rd: print.summary.Inference_run.Rd:42-44: Dropping empty section \seealso
+checkRd: (5) print.summary.Inference_run.Rd:0-61: Must have a \description
+prepare_Rd: random_interaction_matrix_bio.Rd:6-8: Dropping empty section \description
+prepare_Rd: random_interaction_matrix_bio.Rd:27-29: Dropping empty section \details
+prepare_Rd: random_interaction_matrix_bio.Rd:30-36: Dropping empty section \value
+prepare_Rd: random_interaction_matrix_bio.Rd:43-45: Dropping empty section \note
+prepare_Rd: random_interaction_matrix_bio.Rd:40-42: Dropping empty section \author
+prepare_Rd: random_interaction_matrix_bio.Rd:37-39: Dropping empty section \references
+prepare_Rd: random_interaction_matrix_bio.Rd:49-51: Dropping empty section \seealso
+checkRd: (5) random_interaction_matrix_bio.Rd:0-87: Must have a \description
+prepare_Rd: regularized_linear_regression.Rd: Only one \arguments section is allowed: the first will be used
+prepare_Rd: regularized_linear_regression.Rd:6-8: Dropping empty section \description
+prepare_Rd: regularized_linear_regression.Rd:33-35: Dropping empty section \details
+prepare_Rd: regularized_linear_regression.Rd:36-42: Dropping empty section \value
+prepare_Rd: regularized_linear_regression.Rd:49-51: Dropping empty section \note
+prepare_Rd: regularized_linear_regression.Rd:46-48: Dropping empty section \author
+prepare_Rd: regularized_linear_regression.Rd:43-45: Dropping empty section \references
+prepare_Rd: regularized_linear_regression.Rd:55-57: Dropping empty section \seealso
+checkRd: (5) regularized_linear_regression.Rd:0-101: Must have a \description
+prepare_Rd: sensitivityAnalysis.Rd:49: Dropping empty section \keyword
+prepare_Rd: sensitivityAnalysis.Rd:18-20: Dropping empty section \details
+prepare_Rd: sensitivityAnalysis.Rd:30-32: Dropping empty section \author
+prepare_Rd: sensitivityAnalysis.Rd:27-29: Dropping empty section \references
+prepare_Rd: sensitivityAnalysis.Rd:42-44: Dropping empty section \seealso
+prepare_Rd: sensitivityAnalysis.Rd:45-46: Dropping empty section \examples
+prepare_Rd: slope.Rd:6-8: Dropping empty section \description
+prepare_Rd: slope.Rd:18-20: Dropping empty section \details
+prepare_Rd: slope.Rd:21-27: Dropping empty section \value
+prepare_Rd: slope.Rd:34-36: Dropping empty section \note
+prepare_Rd: slope.Rd:31-33: Dropping empty section \author
+prepare_Rd: slope.Rd:28-30: Dropping empty section \references
+prepare_Rd: slope.Rd:40-42: Dropping empty section \seealso
+checkRd: (5) slope.Rd:0-67: Must have a \description
+prepare_Rd: solveLV_Sens_bio.Rd:7-9: Dropping empty section \description
+prepare_Rd: solveLV_Sens_bio.Rd:25-27: Dropping empty section \details
+prepare_Rd: solveLV_Sens_bio.Rd:28-34: Dropping empty section \value
+prepare_Rd: solveLV_Sens_bio.Rd:41-43: Dropping empty section \note
+prepare_Rd: solveLV_Sens_bio.Rd:38-40: Dropping empty section \author
+prepare_Rd: solveLV_Sens_bio.Rd:35-37: Dropping empty section \references
+prepare_Rd: solveLV_Sens_bio.Rd:47-49: Dropping empty section \seealso
+checkRd: (5) solveLV_Sens_bio.Rd:0-61: Must have a \description
+prepare_Rd: solveLV_bio.Rd:6-8: Dropping empty section \description
+prepare_Rd: solveLV_bio.Rd:24-26: Dropping empty section \details
+prepare_Rd: solveLV_bio.Rd:27-33: Dropping empty section \value
+prepare_Rd: solveLV_bio.Rd:40-42: Dropping empty section \note
+prepare_Rd: solveLV_bio.Rd:37-39: Dropping empty section \author
+prepare_Rd: solveLV_bio.Rd:34-36: Dropping empty section \references
+prepare_Rd: solveLV_bio.Rd:46-48: Dropping empty section \seealso
+checkRd: (5) solveLV_bio.Rd:0-58: Must have a \description
+prepare_Rd: summary.Inference_run.Rd:6-8: Dropping empty section \description
+prepare_Rd: summary.Inference_run.Rd:20-22: Dropping empty section \details
+prepare_Rd: summary.Inference_run.Rd:37-39: Dropping empty section \note
+prepare_Rd: summary.Inference_run.Rd:34-36: Dropping empty section \author
+prepare_Rd: summary.Inference_run.Rd:31-33: Dropping empty section \references
+prepare_Rd: summary.Inference_run.Rd:43-45: Dropping empty section \seealso
+checkRd: (5) summary.Inference_run.Rd:0-66: Must have a \description
+* checking Rd metadata ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... WARNING
+Undocumented code objects:
+  'gLVnonlinearRegression'
+All user-level objects in a package should have documentation entries.
+See chapter 'Writing R documentation files' in the 'Writing R
+Extensions' manual.
+* checking for code/documentation mismatches ... WARNING
+Functions or methods with usage in documentation object 'nongLVlinearRegression' but not in code:
+  nongLVlinearRegression
+
+* checking Rd \usage sections ... NOTE
+S3 methods shown with full name in documentation object 'plot.Inference_run':
+  'plot.Inference_run'
+
+S3 methods shown with full name in documentation object 'plot.Sim_data':
+  'plot.Sim_data'
+
+S3 methods shown with full name in documentation object 'points.Sim_data':
+  'points.Sim_data'
+
+S3 methods shown with full name in documentation object 'print.summary.Inference_run':
+  'print.summary.Inference_run'
+
+S3 methods shown with full name in documentation object 'summary.Inference_run':
+  'summary.Inference_run'
+
+The \usage entries for S3 methods should use the \method markup and not
+their full name.
+See chapter 'Writing R documentation files' in the 'Writing R
+Extensions' manual.
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking examples ... ERROR
+Running examples in 'gLVInterNetworks-Ex.R' failed
+The error most likely occurred in:
+
+> ### Name: gLVInterNetworks-package
+> ### Title: Inference of interaction networks based on generalised Lotka
+> ###   Volterra dynamics
+> ### Aliases: gLVInterNetworks-package gLVInterNetworks
+> ### Keywords: package
+> 
+> ### ** Examples
+> 
+> library(gLVInterNetworks)
+> data <- generate_data(species = 2, number_of_non_diagonal_coefficients = 2, timepoints = 100, noise = 0.01, testData = 20)
+DLSODA-  At T(=R1) and step size H(=R2), the error
+      test failed repeatedly or with ABS(H) = HMIN
+In above message, R1 = 3.22358, R2 = 1e-07
+ 
+> ## Not run: plot(data, type = "l")
+> lr <- gLVlinearRegression(data, regularization = TRUE, alpha = 0)
+> ## Not run: summary(lr)
+> ## Not run: plot(lr, type = "l")
+> ## Not run: points(data)
+> nlr <- nongLVlinearRegression(data, parms0 = lr$Parms)
+Error: could not find function "nongLVlinearRegression"
+Execution halted
+* checking PDF version of manual ... OK
+* DONE
+Status: 1 ERROR, 4 WARNINGs, 5 NOTEs

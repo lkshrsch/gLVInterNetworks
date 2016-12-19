@@ -29,11 +29,11 @@ Maintainer: \packageMaintainer{gLVInterNetworks}
 library(gLVInterNetworks)
 data <- generate_data(species = 2, number_of_non_diagonal_coefficients = 2, timepoints = 100, noise = 0.01, testData = 20)
 \dontrun{plot(data, type = "l")}
-lr <- linear_Regression(data, regularization = TRUE, alpha = 0)
+lr <- gLVlinearRegression(data, regularization = TRUE, alpha = 0)
 \dontrun{summary(lr)}
 \dontrun{plot(lr, type = "l")}
 \dontrun{points(data)}
-nlr <- nonlinear_Regression(data, parms0 = lr$Parms)
+nlr <- gLVnonlinearRegression(data, parms0 = lr$Parms)
 \dontrun{summary(nlr)}
 \dontrun{plot(nlr, type = "l")}
 \dontrun{points(data)}
