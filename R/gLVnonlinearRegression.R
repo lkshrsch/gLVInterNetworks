@@ -114,8 +114,10 @@ function(data, parms0 = NULL, ftol = 1e-8 , ptol = 1e-8, maxiter = 100, lowerbou
     Result_nonlin$Parms <- Fit$par
     Result_nonlin$SSR <- Fit$ssr
     Result_nonlin$SE <- NULL
+    Result_nonlin$residual_SD <- sd(Fit$residuals)
+
     Result_nonlin$residuals_t.test <- NULL
-    Result_nonlin$message <- "Failure on computing summary statistics"
+    Result_nonlin$message <- "Failure on computing summary statistics. Solution converged to optimal point estimates"
     reshat <- solveLV_bio(Fit$par, times = seq(0,data$obs[nrow(data$obs),1],by = 0.01),States = data$obs[1,-1])
     Result_nonlin$Fit <- Fit
     
@@ -145,6 +147,7 @@ function(data, parms0 = NULL, ftol = 1e-8 , ptol = 1e-8, maxiter = 100, lowerbou
     
     Result_nonlin$Parms <- parameter_matrix(parms_nonlin, species)
     Result_nonlin$SSR <- SSR_nonlin
+    Result_nonlin$residual_SD <- sd(Fit$residuals)
     Result_nonlin$SE <- parameter_matrix(SE_nonlin, species)
     Result_nonlin$residuals_t.test <- mean_zero_of_errors_nonlin
     Result_nonlin$message <- Fit$message
