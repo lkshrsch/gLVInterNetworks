@@ -1,12 +1,15 @@
 gLVInterNetworks-package
                         Inference of interaction networks based on
                         generalised Lotka Volterra dynamics
+gLVInterNetworks-package
+                        Inference of interaction networks based on
+                        generalised Lotka Volterra dynamics
 gLVlinearRegression     Parameter estimation of algebraic linear
                         discrete gLV model
-generate_data           Generate random data for gLV fitting
-nongLVlinearRegression
+gLVnonlinearRegression
                         Parameter estimation through gradient search of
                         continuous nonlinear gLV model
+generate_data           Generate random data for gLV fitting
 plot.Sim_data           Plot function for objects returned by in silico
                         data generation function
 plotGraph               Plot interaction network

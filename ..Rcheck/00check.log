@@ -144,6 +144,8 @@ prepare_Rd: inSilico_bio.Rd:43-45: Dropping empty section \author
 prepare_Rd: inSilico_bio.Rd:40-42: Dropping empty section \references
 prepare_Rd: inSilico_bio.Rd:52-54: Dropping empty section \seealso
 checkRd: (5) inSilico_bio.Rd:0-112: Must have a \description
+prepare_Rd: iniflowcyts-package.Rd:24: All text must be in a section
+prepare_Rd: iniflowcyts-package.Rd:26-27: Dropping empty section \seealso
 prepare_Rd: interaction_compare.Rd:6-8: Dropping empty section \description
 prepare_Rd: interaction_compare.Rd:21-23: Dropping empty section \details
 prepare_Rd: interaction_compare.Rd:24-30: Dropping empty section \value
@@ -282,18 +284,16 @@ prepare_Rd: summary.Inference_run.Rd:34-36: Dropping empty section \author
 prepare_Rd: summary.Inference_run.Rd:31-33: Dropping empty section \references
 prepare_Rd: summary.Inference_run.Rd:43-45: Dropping empty section \seealso
 checkRd: (5) summary.Inference_run.Rd:0-66: Must have a \description
-* checking Rd metadata ... OK
+* checking Rd metadata ... WARNING
+Rd files with duplicated name 'gLVInterNetworks-package':
+  'gLVInterNetworks-package.Rd' 'iniflowcyts-package.Rd'
+Rd files with duplicated alias 'gLVInterNetworks':
+  'gLVInterNetworks-package.Rd' 'iniflowcyts-package.Rd'
+Rd files with duplicated alias 'gLVInterNetworks-package':
+  'gLVInterNetworks-package.Rd' 'iniflowcyts-package.Rd'
 * checking Rd cross-references ... OK
-* checking for missing documentation entries ... WARNING
-Undocumented code objects:
-  'gLVnonlinearRegression'
-All user-level objects in a package should have documentation entries.
-See chapter 'Writing R documentation files' in the 'Writing R
-Extensions' manual.
-* checking for code/documentation mismatches ... WARNING
-Functions or methods with usage in documentation object 'nongLVlinearRegression' but not in code:
-  nongLVlinearRegression
-
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
 * checking Rd \usage sections ... NOTE
 S3 methods shown with full name in documentation object 'plot.Inference_run':
   'plot.Inference_run'
@@ -344,4 +344,4 @@ Error: could not find function "nongLVlinearRegression"
 Execution halted
 * checking PDF version of manual ... OK
 * DONE
-Status: 1 ERROR, 4 WARNINGs, 5 NOTEs
+Status: 1 ERROR, 3 WARNINGs, 5 NOTEs

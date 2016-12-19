@@ -33,7 +33,7 @@ lr <- gLVlinearRegression(data, regularization = TRUE, alpha = 0)
 \dontrun{summary(lr)}
 \dontrun{plot(lr, type = "l")}
 \dontrun{points(data)}
-nlr <- nongLVlinearRegression(data, parms0 = lr$Parms)
+nlr <- gLVnonlinearRegression(data, parms0 = lr$Parms)
 \dontrun{summary(nlr)}
 \dontrun{plot(nlr, type = "l")}
 \dontrun{points(data)}
@@ -45,5 +45,4 @@ ident <- sensitivityAnalysis(nlr$Parms)
 summary(ident$sens)
 ## Print collinearity index for all parameters together
 ident$coll[ident$coll[,"N"]==length(data$Parms),]
-
 }

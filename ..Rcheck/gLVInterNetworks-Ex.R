@@ -229,10 +229,10 @@ nameEx("gLVnonlinearRegression")
 
 flush(stderr()); flush(stdout())
 
-### Name: nongLVlinearRegression
+### Name: gLVnonlinearRegression
 ### Title: Parameter estimation through gradient search of continuous
 ###   nonlinear gLV model
-### Aliases: nongLVlinearRegression
+### Aliases: gLVnonlinearRegression
 ### Keywords: ~kwd2
 
 ### ** Examples
@@ -380,6 +380,37 @@ function (species, number_of_non_diagonal_coefficients, events,
     options(warn = 1)
     return(list(res, Parms))
   }
+
+
+
+cleanEx()
+nameEx("iniflowcyts-package")
+### * iniflowcyts-package
+
+flush(stderr()); flush(stdout())
+
+### Name: gLVInterNetworks-package
+### Title: Inference of interaction networks based on generalised Lotka
+###   Volterra dynamics
+### Aliases: gLVInterNetworks-package gLVInterNetworks
+### Keywords: package
+
+### ** Examples
+
+library(gLVInterNetworks)
+data <- generate_data(species = 2, number_of_non_diagonal_coefficients = 2, timepoints = 100, noise = 0.01, testData = 20)
+## Not run: plot(data, type = "l")
+lr <- gLVlinearRegression(data, regularization = TRUE, alpha = 0)
+## Not run: summary(lr)
+## Not run: plot(lr, type = "l")
+## Not run: points(data)
+nlr <- gLVnonlinearRegression(data, parms0 = lr$Parms)
+## Not run: summary(nlr)
+## Not run: plot(nlr, type = "l")
+## Not run: points(data)
+## Not run: par(mfrow = c(1,2))
+## Not run: plotGraph(data, vsize = 0.2, main = "Original interaction network", verbose = TRUE )
+## Not run: plotGraph(nlr, vsize = 0.2, main = "Inferred interaction network", verbose = TRUE)
 
 
 
