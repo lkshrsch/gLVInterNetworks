@@ -1,0 +1,10 @@
+Package: gLVInterNetworks
+Type: Package
+Title: Inference of interaction networks based on generalised Lotka Volterra dynamics
+Version: 0.1
+Date: 2016-11-08
+Author: Lukas Hirsch, Florian Centler
+Maintainer: Lukas Hirsch <lukashirsch@gmail.com>
+Description: Inference of interaction networks based on the parameterization of generalized Lotka Volterra models on timeseries data
+Imports: deSolve, MASS, glmnet, FME, igraph, minpack.lm, coda, minqa, rootSolve
+License: GPL-2
