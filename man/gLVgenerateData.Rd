@@ -1,5 +1,5 @@
-\name{generate_data}
-\alias{generate_data}
+\name{gLVgenerateData}
+\alias{gLVgenerateData}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Generate random data for gLV fitting
@@ -8,7 +8,7 @@ Generate random data for gLV fitting
 Generates random data simulating time series of cell abundances governed by Lotka Volterra dynamics
 }
 \usage{
-generate_data(species, number_of_non_diagonal_coefficients, timepoints, noise, testData)
+gLVgenerateData(species, number_of_non_diagonal_coefficients, timepoints, noise, testData)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

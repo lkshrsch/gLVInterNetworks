@@ -12,7 +12,7 @@ plot.Sim_data(x, legend = FALSE, \dots)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-Object of class Sim_data as returned by function \code{generate_data()}
+Object of class Sim_data as returned by function \code{gLVgenerateData()}
 }
   \item{legend}{
 Set to TRUE to place a basic legend in the topright of the plot

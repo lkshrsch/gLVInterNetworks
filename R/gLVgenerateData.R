@@ -1,5 +1,5 @@
 
-generate_data <- 
+gLVgenerateData <- 
 function(species, number_of_non_diagonal_coefficients, timepoints, noise, testData){
   
   'requires inSilico_bio, discrete, addNoise_res'

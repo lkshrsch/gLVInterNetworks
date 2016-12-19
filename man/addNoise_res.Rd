@@ -4,7 +4,7 @@
 \title{
 Add stochasticity to in silico generated data}
 \description{
-Internal function used in \code{generate_data()} to provide expected measurement errors addinf gaussian noise }
+Internal function used in \code{gLVgenerateData()} to provide expected measurement errors addinf gaussian noise }
 \usage{
 addNoise_res(res, sd)
 }

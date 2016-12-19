@@ -1,5 +1,4 @@
 gLVInterNetworks-package	gLVInterNetworks-package
-gLVInterNetworks-package	iniflowcyts-package
 addNoise_res	addNoise_res
 assessment	assessment
 compare_matrix	compare_matrix
@@ -9,7 +8,6 @@ draw_interaction_network	draw_interaction_network
 generate_data	generate_data
 generate_interaction_network	generate_interaction_network
 gLVInterNetworks	gLVInterNetworks-package
-gLVInterNetworks	iniflowcyts-package
 gLVlinearRegression	gLVlinearRegression
 gLVnonlinearRegression	gLVnonlinearRegression
 inSilico_bio	inSilico_bio

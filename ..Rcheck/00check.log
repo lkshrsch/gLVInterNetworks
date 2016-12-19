@@ -144,8 +144,6 @@ prepare_Rd: inSilico_bio.Rd:43-45: Dropping empty section \author
 prepare_Rd: inSilico_bio.Rd:40-42: Dropping empty section \references
 prepare_Rd: inSilico_bio.Rd:52-54: Dropping empty section \seealso
 checkRd: (5) inSilico_bio.Rd:0-112: Must have a \description
-prepare_Rd: iniflowcyts-package.Rd:24: All text must be in a section
-prepare_Rd: iniflowcyts-package.Rd:26-27: Dropping empty section \seealso
 prepare_Rd: interaction_compare.Rd:6-8: Dropping empty section \description
 prepare_Rd: interaction_compare.Rd:21-23: Dropping empty section \details
 prepare_Rd: interaction_compare.Rd:24-30: Dropping empty section \value
@@ -284,13 +282,7 @@ prepare_Rd: summary.Inference_run.Rd:34-36: Dropping empty section \author
 prepare_Rd: summary.Inference_run.Rd:31-33: Dropping empty section \references
 prepare_Rd: summary.Inference_run.Rd:43-45: Dropping empty section \seealso
 checkRd: (5) summary.Inference_run.Rd:0-66: Must have a \description
-* checking Rd metadata ... WARNING
-Rd files with duplicated name 'gLVInterNetworks-package':
-  'gLVInterNetworks-package.Rd' 'iniflowcyts-package.Rd'
-Rd files with duplicated alias 'gLVInterNetworks':
-  'gLVInterNetworks-package.Rd' 'iniflowcyts-package.Rd'
-Rd files with duplicated alias 'gLVInterNetworks-package':
-  'gLVInterNetworks-package.Rd' 'iniflowcyts-package.Rd'
+* checking Rd metadata ... OK
 * checking Rd cross-references ... OK
 * checking for missing documentation entries ... OK
 * checking for code/documentation mismatches ... OK
@@ -316,32 +308,7 @@ See chapter 'Writing R documentation files' in the 'Writing R
 Extensions' manual.
 * checking Rd contents ... OK
 * checking for unstated dependencies in examples ... OK
-* checking examples ... ERROR
-Running examples in 'gLVInterNetworks-Ex.R' failed
-The error most likely occurred in:
-
-> ### Name: gLVInterNetworks-package
-> ### Title: Inference of interaction networks based on generalised Lotka
-> ###   Volterra dynamics
-> ### Aliases: gLVInterNetworks-package gLVInterNetworks
-> ### Keywords: package
-> 
-> ### ** Examples
-> 
-> library(gLVInterNetworks)
-> data <- generate_data(species = 2, number_of_non_diagonal_coefficients = 2, timepoints = 100, noise = 0.01, testData = 20)
-DLSODA-  At T(=R1) and step size H(=R2), the error
-      test failed repeatedly or with ABS(H) = HMIN
-In above message, R1 = 3.22358, R2 = 1e-07
- 
-> ## Not run: plot(data, type = "l")
-> lr <- gLVlinearRegression(data, regularization = TRUE, alpha = 0)
-> ## Not run: summary(lr)
-> ## Not run: plot(lr, type = "l")
-> ## Not run: points(data)
-> nlr <- nongLVlinearRegression(data, parms0 = lr$Parms)
-Error: could not find function "nongLVlinearRegression"
-Execution halted
+* checking examples ... OK
 * checking PDF version of manual ... OK
 * DONE
-Status: 1 ERROR, 3 WARNINGs, 5 NOTEs
+Status: 2 WARNINGs, 5 NOTEs

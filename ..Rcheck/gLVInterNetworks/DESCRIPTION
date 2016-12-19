@@ -10,4 +10,4 @@ Description: Inference of interaction networks based on the parameterization of 
 Imports: deSolve, MASS, glmnet, FME, igraph, minpack.lm, coda, minqa,
         rootSolve
 License: GPL-2
-Built: R 3.2.2; ; 2016-12-19 14:04:35 UTC; windows
+Built: R 3.2.2; ; 2016-12-19 14:08:12 UTC; windows

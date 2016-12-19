@@ -56,7 +56,7 @@ Lukas Hirsch
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-data <- generate_data(2,2,100,0.1, 20)
+data <- gLVgenerateData(2,2,100,0.1, 20)
 #plotGraph(data)
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
