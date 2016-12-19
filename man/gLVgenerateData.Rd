@@ -8,14 +8,14 @@ Generate random data for gLV fitting
 Generates random data simulating time series of cell abundances governed by Lotka Volterra dynamics
 }
 \usage{
-gLVgenerateData(species, number_of_non_diagonal_coefficients, timepoints, noise, testData)
+gLVgenerateData(species, number_of_interactions, timepoints, noise, testData)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{species}{
 Integer describing the number of independent cellular subcommunities 
 }
-  \item{number_of_non_diagonal_coefficients}{
+  \item{number_of_interactions}{
 Integer describing the number of non-zero interactions present in the simulated system. These are assigned randomly between the nodes or subcommunities
 }
   \item{timepoints}{
@@ -60,11 +60,11 @@ Lukas Hirsch
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function (species, number_of_non_diagonal_coefficients, timepoints, 
+function (species, number_of_interactions, timepoints, 
     noise) 
 {
     "requires inSilico_bio, discrete, addNoise_res"
-    raw_data <- inSilico_bio(species, number_of_non_diagonal_coefficients)
+    raw_data <- inSilico_bio(species, number_of_interactions)
     Parms <- raw_data[[2]]
     res <- raw_data[[1]]
     threshold = 3

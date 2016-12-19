@@ -7,15 +7,15 @@ Generate a random parameter matrix}
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-random_interaction_matrix_bio(species, number_of_non_diagonal_coefficients, times = 1:100, plot = FALSE)
+random_interaction_matrix_bio(species, number_of_interactions, times = 1:100, plot = FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{species}{
 %%     ~~Describe \code{species} here~~
 }
-  \item{number_of_non_diagonal_coefficients}{
-%%     ~~Describe \code{number_of_non_diagonal_coefficients} here~~
+  \item{number_of_interactions}{
+%%     ~~Describe \code{number_of_interactions} here~~
 }
   \item{times}{
 %%     ~~Describe \code{times} here~~
@@ -55,12 +55,12 @@ random_interaction_matrix_bio(species, number_of_non_diagonal_coefficients, time
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function (species, number_of_non_diagonal_coefficients, times = 1:100, 
+function (species, number_of_interactions, times = 1:100, 
     plot = FALSE) 
 {
     "Generate random parameters for simulation studies on multispecies gLV"
     "For lotka volterra function without substrate, so diagonal entries less negative??"
-    n = number_of_non_diagonal_coefficients
+    n = number_of_interactions
     if (n > (species^2 - species)) {
         print(paste0("Error. For ", species, " species, the number of interactions can<b4>t be greater than ", 
             species^2 - species))

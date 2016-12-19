@@ -7,15 +7,15 @@ Generate in silico data}
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-inSilico_bio(species, number_of_non_diagonal_coefficients, events, mode = 1, times = 1:100)
+inSilico_bio(species, number_of_interactions, events, mode = 1, times = 1:100)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{species}{
 %%     ~~Describe \code{species} here~~
 }
-  \item{number_of_non_diagonal_coefficients}{
-%%     ~~Describe \code{number_of_non_diagonal_coefficients} here~~
+  \item{number_of_interactions}{
+%%     ~~Describe \code{number_of_interactions} here~~
 }
   \item{events}{
 %%     ~~Describe \code{events} here~~
@@ -58,12 +58,12 @@ inSilico_bio(species, number_of_non_diagonal_coefficients, events, mode = 1, tim
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function (species, number_of_non_diagonal_coefficients, events, 
+function (species, number_of_interactions, events, 
     mode = 1, times = 1:100) 
 {
     "requires: random_interaction_matrix_bio, solveLV"
     "mode:0 = linear ODE, 1 = normal, 2 = mixed feeding, 3 = events"
-    n = number_of_non_diagonal_coefficients
+    n = number_of_interactions
     if (n > (species^2 - species)) {
         print(paste0("Error. For ", species, " species, the number of interactions can<b4>t be greater than ", 
             species^2 - species))
@@ -72,7 +72,7 @@ function (species, number_of_non_diagonal_coefficients, events,
     res <- matrix(0, nrow = 2)
     while (class(res)[1] != "deSolve") {
         interactions <- random_interaction_matrix_bio(species, 
-            number_of_non_diagonal_coefficients)
+            number_of_interactions)
         growth <- rep(0, nrow(interactions))
         var_means <- runif(n = species, 0.1, 0.8)
         for (i in 1:nrow(interactions)) {

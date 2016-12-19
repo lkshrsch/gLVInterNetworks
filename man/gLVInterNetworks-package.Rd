@@ -27,7 +27,7 @@ Maintainer: \packageMaintainer{gLVInterNetworks}
 }
 \examples{
 library(gLVInterNetworks)
-data <- gLVgenerateData(species = 2, number_of_non_diagonal_coefficients = 2, timepoints = 100, noise = 0.01, testData = 20)
+data <- gLVgenerateData(species = 2, number_of_interactions = 2, timepoints = 100, noise = 0.01, testData = 20)
 \dontrun{plot(data, type = "l")}
 lr <- gLVlinearRegression(data, regularization = TRUE, alpha = 0)
 \dontrun{summary(lr)}

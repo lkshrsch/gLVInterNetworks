@@ -1,9 +1,9 @@
 random_interaction_matrix_bio <-
-function(species,number_of_non_diagonal_coefficients, times=1:100, plot=FALSE){
+function(species,number_of_interactions, times=1:100, plot=FALSE){
   'Generate random parameters for simulation studies on multispecies gLV'
   'For lotka volterra function without substrate, so diagonal entries less negative'
   
-  n = number_of_non_diagonal_coefficients
+  n = number_of_interactions
   
   if(n>(species^2-species)){
     print(paste0("Error. For ", species," species, the number of interactions cant be greater than ",species^2-species))

@@ -1,10 +1,10 @@
 
 gLVgenerateData <- 
-function(species, number_of_non_diagonal_coefficients, timepoints, noise, testData){
+function(species, number_of_interactions, timepoints, noise, testData){
   
   'requires inSilico_bio, discrete, addNoise_res'
   
-  raw_data <- inSilico_bio(species,number_of_non_diagonal_coefficients)
+  raw_data <- inSilico_bio(species,number_of_interactions)
   Parms <- raw_data[[2]]
   
   res <- raw_data[[1]]

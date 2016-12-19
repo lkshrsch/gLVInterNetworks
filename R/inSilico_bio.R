@@ -1,11 +1,11 @@
 inSilico_bio <-
-function(species, number_of_non_diagonal_coefficients, events, mode = 1, times=1:100){
+function(species, number_of_interactions, events, mode = 1, times=1:100){
   
   'requires: random_interaction_matrix_bio, solveLV'
   
   
   "mode:0 = linear ODE, 1 = normal, 2 = mixed feeding, 3 = events"
-  n = number_of_non_diagonal_coefficients
+  n = number_of_interactions
   
   if(n>(species^2-species)){
     print(paste0("Error. For ", species," species, the number of interactions cant be greater than ",species^2-species))
@@ -19,7 +19,7 @@ function(species, number_of_non_diagonal_coefficients, events, mode = 1, times=1
     # j <- j+1
     #print(j)
     
-    interactions <- random_interaction_matrix_bio(species, number_of_non_diagonal_coefficients)
+    interactions <- random_interaction_matrix_bio(species, number_of_interactions)
     #m <- sample(x = c(0,runif(species+5,0.01,2)), size = species, prob = c(1-(1/(species+5)),rep(0.4/(species+5),species+5)), replace = T) 
     #Parms <- cbind( m,interactions)
     
