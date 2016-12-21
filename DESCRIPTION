@@ -7,4 +7,6 @@ Author: Lukas Hirsch, Florian Centler
 Maintainer: Lukas Hirsch <lukashirsch@gmail.com>
 Description: Inference of interaction networks based on the parameterization of generalized Lotka Volterra models on timeseries data
 Imports: deSolve, MASS, glmnet, FME, igraph, minpack.lm, coda, minqa, rootSolve
+Suggests: knitr
+VignetteBuilder: knitr
 License: GPL-2

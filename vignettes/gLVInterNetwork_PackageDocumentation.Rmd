@@ -1,0 +1,186 @@
+---
+title: "Documentation and Walkthrough of package gLVInterNetworks"
+author: "Lukas Hirsch"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Generation of in silico data
+
+To download the package from my github account use
+```{r, eval=FALSE}
+devtools::install_github("lkshrsch/gLVInterNetworks")
+```
+
+
+To load the package into the R environment 
+```{r}
+library(gLVInterNetworks)
+```
+
+To generate in silico data sets we use the following command with the following mandatory arguments:
+
+* species: The amount of variables in the system
+* number\_of\_interactions: The amount of interactions between different variables
+* timepoints: Starting from 0, the number of measurements the output will have
+* noise: The standard deviation of the stochasticity added to the data (variance of the gaussian noise)
+* testData: The percentage of ending datapoints left out for validation purposes.
+
+```{r, eval=FALSE}
+data <- gLVgenerateData(species = 2,
+                        number_of_interactions = 2,
+                        timepoints = 40,
+                        noise = 0.01,
+                        testData = 20)
+```
+
+Note that depending on the size of the system to simulate (number of species, etc) this command can output messages which can be ignored regarding the difficulty of the numerical integration of the solution.
+
+```{r}
+data("exampleData2")
+```
+
+The variable data is a list containing the following attributes
+
+```{r}
+names(exampleData2)
+```
+
+From which *species*, *timepoints*, *noise*, *sparsity*, and *testData* correspond to the input arguments.
+
+* Parms : Is the randomly generated parameter matrix under the given input constraints. It contains one row per variables / species in the system and the parameters correspond to :
+* obs : Corresponds to the solution using the estimated model parameters for the time interval given. This are the values plotted when using 
+
+```{r, basic_plotting_data_with_extra_legend}
+plot(exampleData2, pch = 1:exampleData2$species)
+legend("topright", legend = colnames(exampleData2$obs[,-1]), pch = 1:exampleData2$species, col=1:exampleData2$species)
+```
+
+Or alternatively with the legend flag set to TRUE for an easy plot generation
+
+```{r, basic_plotting_data_with_legend_flag}
+plot(exampleData2, legend = T)
+```
+
+
+
+
+# Loading data sets
+
+For this example I stored a table of observations with a time column with the dates when the observations were taken. The .csv file is a text file with entries sepparated by semicolons ";".
+
+```{r, loading_a_csv_file_with_dates, eval=FALSE}
+setwd("home/user/example/directory/")
+df <- read.csv2("realData.csv", header = TRUE)
+```
+
+DF IS AN EXAMPLE TEXT DATA IN PACKAGE
+LOAD(DF)
+
+```{r, echo=FALSE}
+
+```
+
+
+```{r, eval=FALSE}
+head(df)
+```
+
+```{r, eval=FALSE}
+matplot(df[,-1])
+```
+
+We can convert the data.frame to a numerical matrix using
+
+```{r, eval=FALSE}
+exampleData <- data.matrix(df)
+```
+
+With which we have transformed the dates into numerical values. The original measurement time rate (per day) will be the changing rate for the estimated parameters after fitting the model to the data.
+
+```{r, eval=FALSE}
+head(exampleData)
+```
+
+# Fitting the generalized Lotka Volterra model to the data
+
+The generalized Lotka Volterra model consists in a set of differential equations, nonlinear in the variables $x_i$. It describes the rate of change in time of the abundance of a variable (species, or taxonomical/functional unit) 
+
+
+
+$\frac{dx_i}{dt} = \alpha_i x_i + \sum{ \beta_{ij} x_i x_j }$
+
+Or written simpler
+
+$\dot{x_i} = x_i ( \alpha_i + \sum{ \beta_{ij}  x_j })$
+
+Written in matrix form for a two species system:
+
+$\begin{pmatrix} \dot{x_1} \\ \dot{x_2}  \end{pmatrix} = \begin{pmatrix} x_1 \\ x_2  \end{pmatrix} \times \left[ \begin{pmatrix} \alpha_1 & \beta_{11} & \beta_{12} \\  \alpha_2 & \beta_{21} & \beta_{22} \end{pmatrix} \cdot \begin{pmatrix} 1 \\ x_1 \\ x_2  \end{pmatrix}\right]$
+
+This matrix form for the parameter matrix with the growth term in the first column and interaction parameters in the right-side quadratic matrix corresponds to the output of the parameter in the R code:
+
+HERE USE 2 SPECIES EXAMPLE DATA!
+
+```{r, echo=FALSE, eval=FALSE}
+print(exampleData1$Parms)
+```
+
+## Nonlinear Regression to estimate values for the model parameters
+
+To estimate the parameter matrix from the equations above, use
+
+```{r, eval=FALSE}
+nlr <- gLVnonlinearRegression(data = exampleData2)
+```
+
+```{r, echo=FALSE}
+data("nlrData2")
+```
+
+The resulting list containts `r length(names(nlrData2))` objects, named `r names(nlrData2)`
+
+The algorithm achieved a fit with a total sum of squared residuals of
+
+```{r}
+print(nlrData2$SSR)
+```
+
+The estimated parameter matrix is
+
+```{r}
+print(nlrData2$Parms)
+```
+
+With standard deviations
+
+```{r}
+summary(nlrData2)
+```
+
+We can plot the solution of the fitted model with estimated parameter 
+
+```{r}
+plot(nlrData2, type="l", main="Solution of fitted model")
+points(exampleData2)
+```
+
+## Linear Regression 
+
+# Interpretation of results and model identifiability
+
+## Standard error of model residuals vs Parameter collinearity, Summary of parameter estimates
+
+
+GOTTA GET SENSITIVITY ANALYSIS RESULTS
+
+```{r}
+sd(nlrData2$Fit$residuals)
+```
+
+## Network structures
+
