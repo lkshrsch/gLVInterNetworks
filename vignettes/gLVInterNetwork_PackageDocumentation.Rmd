@@ -2,13 +2,18 @@
 title: "Inference of interaction networks using generalized Lotka Volterra equations on time-series data with package gLVInterNetworks"
 author: "Lukas Hirsch"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output: pdf_document
 vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteIndexEntry{Inference of interaction networks using generalized Lotka Volterra equations on time-series data with package gLVInterNetworks}
   \usepackage[utf8]{inputenc}
 ---
 
+
+```{r, include=FALSE}
+library(knitr)
+opts_chunk$set(out.width='450px', dpi=200, fig.width = 5, fig.height=5, background = "lightcyan3")
+```
 # Generation of in silico data
 
 To download the package from my github account use
