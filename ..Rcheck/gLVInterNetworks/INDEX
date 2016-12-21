@@ -1,12 +1,14 @@
+exampleData2            dataset with 6 species
 gLVInterNetworks-package
                         Inference of interaction networks based on
                         generalised Lotka Volterra dynamics
+gLVgenerateData         Generate random data for gLV fitting
 gLVlinearRegression     Parameter estimation of algebraic linear
                         discrete gLV model
 gLVnonlinearRegression
                         Parameter estimation through gradient search of
                         continuous nonlinear gLV model
-generate_data           Generate random data for gLV fitting
+nlrData2                Result of nonlinear regresssion on Data2
 plot.Sim_data           Plot function for objects returned by in silico
                         data generation function
 plotGraph               Plot interaction network

@@ -31,6 +31,10 @@ Malformed Description field: should contain one or more complete sentences.
 Found the following directory with the name of a check directory:
   ./..Rcheck
 Most likely, these were included erroneously.
+Found the following non-empty subdirectories of 'inst' also used by R:
+  inst/html
+It is recommended not to interfere with package subdirectories used by
+R.
 * checking R files for non-ASCII characters ... OK
 * checking R files for syntax errors ... OK
 * checking whether the package can be loaded ... OK
@@ -104,6 +108,10 @@ prepare_Rd: draw_interaction_network.Rd:43-45: Dropping empty section \seealso
 checkRd: (5) draw_interaction_network.Rd:0-63: Must have a \description
 prepare_Rd: gLVInterNetworks-package.Rd:24: All text must be in a section
 prepare_Rd: gLVInterNetworks-package.Rd:26-27: Dropping empty section \seealso
+prepare_Rd: gLVgenerateData.Rd:31-33: Dropping empty section \details
+prepare_Rd: gLVgenerateData.Rd:48-50: Dropping empty section \note
+prepare_Rd: gLVgenerateData.Rd:42-44: Dropping empty section \references
+prepare_Rd: gLVgenerateData.Rd:54-56: Dropping empty section \seealso
 prepare_Rd: gLVlinearRegression.Rd:8: unknown macro '\delta'
 prepare_Rd: gLVlinearRegression.Rd:8: unknown macro '\alpha'
 prepare_Rd: gLVlinearRegression.Rd:8: unknown macro '\sum'
@@ -124,10 +132,6 @@ prepare_Rd: gLVnonlinearRegression.Rd:47-49: Dropping empty section \author
 prepare_Rd: gLVnonlinearRegression.Rd:44-46: Dropping empty section \references
 prepare_Rd: gLVnonlinearRegression.Rd:54-56: Dropping empty section \seealso
 checkRd: (5) gLVnonlinearRegression.Rd:0-66: Must have a \description
-prepare_Rd: generate_data.Rd:31-33: Dropping empty section \details
-prepare_Rd: generate_data.Rd:48-50: Dropping empty section \note
-prepare_Rd: generate_data.Rd:42-44: Dropping empty section \references
-prepare_Rd: generate_data.Rd:54-56: Dropping empty section \seealso
 prepare_Rd: generate_interaction_network.Rd:6-8: Dropping empty section \description
 prepare_Rd: generate_interaction_network.Rd:36-38: Dropping empty section \details
 prepare_Rd: generate_interaction_network.Rd:39-45: Dropping empty section \value
@@ -308,6 +312,9 @@ See chapter 'Writing R documentation files' in the 'Writing R
 Extensions' manual.
 * checking Rd contents ... OK
 * checking for unstated dependencies in examples ... OK
+* checking contents of 'data' directory ... OK
+* checking data for non-ASCII characters ... OK
+* checking data for ASCII and uncompressed saves ... OK
 * checking examples ... OK
 * checking PDF version of manual ... OK
 * DONE

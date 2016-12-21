@@ -5,8 +5,9 @@ compare_matrix	compare_matrix
 correctly_intervalized_estimates	correctly_intervalized_estimates
 discrete	discrete
 draw_interaction_network	draw_interaction_network
-generate_data	generate_data
+exampleData2	exampleData2
 generate_interaction_network	generate_interaction_network
+gLVgenerateData	gLVgenerateData
 gLVInterNetworks	gLVInterNetworks-package
 gLVlinearRegression	gLVlinearRegression
 gLVnonlinearRegression	gLVnonlinearRegression
@@ -14,6 +15,7 @@ inSilico_bio	inSilico_bio
 interaction_compare	interaction_compare
 log_slope_luk	log_slope_luk
 modfit_pars_estimate_MLE_sequential	modfit_pars_estimate_MLE_sequential
+nlrData2	nlrData2
 obs2data_bio	obs2data_bio
 parameter_matrix	parameter_matrix
 plot.Inference_run	plot.Inference_run

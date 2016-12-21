@@ -201,7 +201,7 @@ flush(stderr()); flush(stdout())
 ### ** Examples
 
 library(gLVInterNetworks)
-data <- generate_data(species = 2, number_of_non_diagonal_coefficients = 2, timepoints = 100, noise = 0.01, testData = 20)
+data <- gLVgenerateData(species = 2, number_of_interactions = 2, timepoints = 100, noise = 0.01, testData = 20)
 ## Not run: plot(data, type = "l")
 lr <- gLVlinearRegression(data, regularization = TRUE, alpha = 0)
 ## Not run: summary(lr)
@@ -223,34 +223,14 @@ ident$coll[ident$coll[,"N"]==length(data$Parms),]
 
 
 cleanEx()
-nameEx("gLVnonlinearRegression")
-### * gLVnonlinearRegression
+nameEx("gLVgenerateData")
+### * gLVgenerateData
 
 flush(stderr()); flush(stdout())
 
-### Name: gLVnonlinearRegression
-### Title: Parameter estimation through gradient search of continuous
-###   nonlinear gLV model
-### Aliases: gLVnonlinearRegression
-### Keywords: ~kwd2
-
-### ** Examples
-
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-
-
-cleanEx()
-nameEx("generate_data")
-### * generate_data
-
-flush(stderr()); flush(stdout())
-
-### Name: generate_data
+### Name: gLVgenerateData
 ### Title: Generate random data for gLV fitting
-### Aliases: generate_data
+### Aliases: gLVgenerateData
 ### Keywords: ~kwd1 ~kwd2
 
 ### ** Examples
@@ -260,11 +240,11 @@ flush(stderr()); flush(stdout())
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function (species, number_of_non_diagonal_coefficients, timepoints, 
+function (species, number_of_interactions, timepoints, 
     noise) 
 {
     "requires inSilico_bio, discrete, addNoise_res"
-    raw_data <- inSilico_bio(species, number_of_non_diagonal_coefficients)
+    raw_data <- inSilico_bio(species, number_of_interactions)
     Parms <- raw_data[[2]]
     res <- raw_data[[1]]
     threshold = 3
@@ -292,6 +272,26 @@ function (species, number_of_non_diagonal_coefficients, timepoints,
     class(data) <- "Sim_data"
     return(data)
   }
+
+
+
+cleanEx()
+nameEx("gLVnonlinearRegression")
+### * gLVnonlinearRegression
+
+flush(stderr()); flush(stdout())
+
+### Name: gLVnonlinearRegression
+### Title: Parameter estimation through gradient search of continuous
+###   nonlinear gLV model
+### Aliases: gLVnonlinearRegression
+### Keywords: ~kwd2
+
+### ** Examples
+
+##---- Should be DIRECTLY executable !! ----
+##-- ==>  Define data, use random,
+##--	or do  help(data=index)  for the standard data sets.
 
 
 
@@ -333,12 +333,12 @@ flush(stderr()); flush(stdout())
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function (species, number_of_non_diagonal_coefficients, events, 
+function (species, number_of_interactions, events, 
     mode = 1, times = 1:100) 
 {
     "requires: random_interaction_matrix_bio, solveLV"
     "mode:0 = linear ODE, 1 = normal, 2 = mixed feeding, 3 = events"
-    n = number_of_non_diagonal_coefficients
+    n = number_of_interactions
     if (n > (species^2 - species)) {
         print(paste0("Error. For ", species, " species, the number of interactions can<b4>t be greater than ", 
             species^2 - species))
@@ -347,7 +347,7 @@ function (species, number_of_non_diagonal_coefficients, events,
     res <- matrix(0, nrow = 2)
     while (class(res)[1] != "deSolve") {
         interactions <- random_interaction_matrix_bio(species, 
-            number_of_non_diagonal_coefficients)
+            number_of_interactions)
         growth <- rep(0, nrow(interactions))
         var_means <- runif(n = species, 0.1, 0.8)
         for (i in 1:nrow(interactions)) {
@@ -591,7 +591,7 @@ flush(stderr()); flush(stdout())
 
 ### ** Examples
 
-data <- generate_data(2,2,100,0.1, 20)
+data <- gLVgenerateData(2,2,100,0.1, 20)
 #plotGraph(data)
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
@@ -713,12 +713,12 @@ flush(stderr()); flush(stdout())
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function (species, number_of_non_diagonal_coefficients, times = 1:100, 
+function (species, number_of_interactions, times = 1:100, 
     plot = FALSE) 
 {
     "Generate random parameters for simulation studies on multispecies gLV"
     "For lotka volterra function without substrate, so diagonal entries less negative??"
-    n = number_of_non_diagonal_coefficients
+    n = number_of_interactions
     if (n > (species^2 - species)) {
         print(paste0("Error. For ", species, " species, the number of interactions can<b4>t be greater than ", 
             species^2 - species))
