@@ -1,19 +1,19 @@
 ---
-title: "Documentation and Walkthrough of package gLVInterNetworks"
+title: "Inference of interaction networks using generalized Lotka Volterra equations on time-series data with package gLVInterNetworks"
 author: "Lukas Hirsch"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteIndexEntry{Vignette Title}
-  %\VignetteEncoding{UTF-8}
+  %\VignetteIndexEntry{Inference of interaction networks using generalized Lotka Volterra equations on time-series data with package gLVInterNetworks}
+  \usepackage[utf8]{inputenc}
 ---
 
 # Generation of in silico data
 
 To download the package from my github account use
 ```{r, eval=FALSE}
-devtools::install_github("lkshrsch/gLVInterNetworks")
+devtools::install_github("lkshrsch/gLVInterNetworks", build_vignettes = TRUE)
 ```
 
 
@@ -112,15 +112,15 @@ The generalized Lotka Volterra model consists in a set of differential equations
 
 
 
-$\frac{dx_i}{dt} = \alpha_i x_i + \sum{ \beta_{ij} x_i x_j }$
+$$\frac{dx_i}{dt} = \alpha_i x_i + \sum{ \beta_{ij} x_i x_j }$$
 
 Or written simpler
 
-$\dot{x_i} = x_i ( \alpha_i + \sum{ \beta_{ij}  x_j })$
+$$\dot{x_i} = x_i ( \alpha_i + \sum{ \beta_{ij}  x_j })$$
 
 Written in matrix form for a two species system:
 
-$\begin{pmatrix} \dot{x_1} \\ \dot{x_2}  \end{pmatrix} = \begin{pmatrix} x_1 \\ x_2  \end{pmatrix} \times \left[ \begin{pmatrix} \alpha_1 & \beta_{11} & \beta_{12} \\  \alpha_2 & \beta_{21} & \beta_{22} \end{pmatrix} \cdot \begin{pmatrix} 1 \\ x_1 \\ x_2  \end{pmatrix}\right]$
+$$\begin{pmatrix} \dot{x_1} \\ \dot{x_2}  \end{pmatrix} = \begin{pmatrix} x_1 \\ x_2  \end{pmatrix} \times \left[ \begin{pmatrix} \alpha_1 & \beta_{11} & \beta_{12} \\  \alpha_2 & \beta_{21} & \beta_{22} \end{pmatrix} \cdot \begin{pmatrix} 1 \\ x_1 \\ x_2  \end{pmatrix}\right]$$
 
 This matrix form for the parameter matrix with the growth term in the first column and interaction parameters in the right-side quadratic matrix corresponds to the output of the parameter in the R code:
 
