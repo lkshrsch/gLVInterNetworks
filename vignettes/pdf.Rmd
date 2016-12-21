@@ -2,7 +2,9 @@
 title: "Inference of interaction networks using generalized Lotka Volterra equations on time-series data with package gLVInterNetworks"
 author: "Lukas Hirsch"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output: 
+  pdf_document:
+    number_sections: yes
 vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteIndexEntry{Inference of interaction networks using generalized Lotka Volterra equations on time-series data with package gLVInterNetworks}
