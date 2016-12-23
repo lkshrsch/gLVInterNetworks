@@ -12,7 +12,7 @@ vignette: >
 
 ```{r, include=FALSE}
 library(knitr)
-opts_chunk$set(out.width='450px', dpi=200, fig.width = 5, fig.height=5, background = "lightcyan3")
+opts_chunk$set(out.width='350px', dpi=200, fig.width = 5, fig.height=5, background = "lightcyan3")
 ```
 # Generation of in silico data
 
@@ -62,7 +62,10 @@ From which *species*, *timepoints*, *noise*, *sparsity*, and *testData* correspo
 
 ```{r, basic_plotting_data_with_extra_legend}
 plot(exampleData2, pch = 1:exampleData2$species)
-legend("topright", legend = colnames(exampleData2$obs[,-1]), pch = 1:exampleData2$species, col=1:exampleData2$species)
+legend("topright", 
+       legend = colnames(exampleData2$obs[,-1]), 
+       pch = 1:exampleData2$species, 
+       col=1:exampleData2$species)
 ```
 
 Or alternatively with the legend flag set to TRUE for an easy plot generation
