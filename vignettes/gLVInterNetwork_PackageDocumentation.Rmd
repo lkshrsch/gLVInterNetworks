@@ -87,7 +87,7 @@ fpath <- system.file("rawdata", "example1.csv", package="gLVInterNetworks")
 
 The load the file
 
-```{r, loading_a_csv_file_with_dates, eval=FALSE}
+```{r, loading_a_csv_file_with_dates}
 df <- read.csv2(file = fpath, header = TRUE)
 ```
 
@@ -128,9 +128,8 @@ $$\begin{pmatrix} \dot{x_1} \\ \dot{x_2}  \end{pmatrix} = \begin{pmatrix} x_1 \\
 
 This matrix form for the parameter matrix with the growth term in the first column and interaction parameters in the right-side quadratic matrix corresponds to the output of the parameter in the R code:
 
-HERE USE 2 SPECIES EXAMPLE DATA!
-
-```{r, echo=FALSE, eval=FALSE}
+```{r, eval=FALSE}
+data("exampleData1")
 print(exampleData1$Parms)
 ```
 
