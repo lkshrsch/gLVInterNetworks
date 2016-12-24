@@ -190,14 +190,76 @@ points(exampleData2)
 
 # Interpretation of results and model identifiability
 
+```{r, warning=FALSE, message=FALSE}
+data <- exampleData2
+ident <- sensitivityAnalysis(Parms = nlrData2$Parms)
+```
+
+```{r, eval=FALSE}
+head(ident$sens)
+```
+
+
+```{r}
+head(ident$coll)
+```
+
+
+```{r}
+ident$coll[ident$coll[,"N"]==42,]
+```
+
+```{r}
+coll_index <- ident$coll[ident$coll[,"N"]==42,"collinearity"]
+```
+
+Thus the least level of precision required for a unique solution is 'r 1/coll_index'. This can be compared to the level of precision that the model solution fits the original data, described by the standard deviation of the residuals left between them:
+
+Level of precision achieved by the solution:
+```{r}
+nlrData2$residual_SD
+```
+Level of precision achievable by different parameterizations (different numeric solutions for the whole parameter matrix): 
+```{r}
+1/coll_index
+```
+
+Is the solution unique?
+```{r}
+nlrData2$residual_SD < 1/coll_index
+```
+
+
+How is the effect of changing values of each parameter single handedly to the output? (sensitivity analysis)
+```{r}
+sSens <- summary(ident$sens)
+print(sSens)
+```
+
+Less sesntivity (standard: lower L2 value) means that the parameter is harder to identify and the result is more correlated to the values that other parameter obtain. This is seen in the summary statistic of the parameter matrix with each standard deviation. Note that only more sensitive parameters (parameters ) are the ones with narrower standard deviation (significantly different from zero):
+
+```{r}
+sSens[order(sSens$L2, decreasing = TRUE),c("value","L2")]
+```
+
+Most sensitive parameters: `r rownames(sSens[order(sSens$L2, decreasing = TRUE),c("value","L2")])[1:10]` ...
+
+```{r}
+s <- cbind(1:42,summary(nlrData2))
+s[order(s[,5]),]
+```
+
+Most certain parameter values: `r order(s[,5])[1:10]` ...
+
+In these two list, eight out of ten parameters coincide (40, 3, 30, 6, 1, 5, 35, 37)
+
+
+
+
 ## Standard error of model residuals vs Parameter collinearity, Summary of parameter estimates
 
 
-GOTTA GET SENSITIVITY ANALYSIS RESULTS
 
-```{r}
-sd(nlrData2$Fit$residuals)
-```
 
 ## Network structures
 

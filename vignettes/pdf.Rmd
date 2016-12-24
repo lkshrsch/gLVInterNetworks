@@ -2,9 +2,7 @@
 title: "Inference of interaction networks using generalized Lotka Volterra equations on time-series data with package gLVInterNetworks"
 author: "Lukas Hirsch"
 date: "`r Sys.Date()`"
-output: 
-  pdf_document:
-    number_sections: yes
+output: pdf_document
 vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteIndexEntry{Inference of interaction networks using generalized Lotka Volterra equations on time-series data with package gLVInterNetworks}
@@ -81,45 +79,41 @@ plot(exampleData2, legend = T)
 
 # Loading data sets
 
-For this example I stored a table of observations with a time column with the dates when the observations were taken. The .csv file is a text file with entries sepparated by semicolons ";".
+The package comes with a small example of raw data stored in a csv file with a time column with the dates when the observations were taken. The .csv file is a text file with entries sepparated by semicolons ";". To get the absolute path of the file 'example1.csv' installed in the package directory 'rawdata/' use
 
-```{r, loading_a_csv_file_with_dates, eval=FALSE}
-setwd("home/user/example/directory/")
-df <- read.csv2("realData.csv", header = TRUE)
+```{r}
+fpath <- system.file("rawdata", "example1.csv", package="gLVInterNetworks")
 ```
 
-DF IS AN EXAMPLE TEXT DATA IN PACKAGE
-LOAD(DF)
+The load the file
 
-```{r, echo=FALSE}
-
+```{r, loading_a_csv_file_with_dates}
+df <- read.csv2(file = fpath, header = TRUE)
 ```
 
-
-```{r, eval=FALSE}
+```{r}
 head(df)
 ```
 
-```{r, eval=FALSE}
+```{r}
 matplot(df[,-1])
 ```
 
 We can convert the data.frame to a numerical matrix using
 
-```{r, eval=FALSE}
+```{r}
 exampleData <- data.matrix(df)
 ```
 
 With which we have transformed the dates into numerical values. The original measurement time rate (per day) will be the changing rate for the estimated parameters after fitting the model to the data.
 
-```{r, eval=FALSE}
+```{r}
 head(exampleData)
 ```
 
 # Fitting the generalized Lotka Volterra model to the data
 
-The generalized Lotka Volterra model consists in a set of differential equations, nonlinear in the variables $x_i$. It describes the rate of change in time of the abundance of a variable (species, or taxonomical/functional unit) 
-
+The generalized Lotka Volterra model consists in a set of differential equations, nonlinear in the variables $x$. It describes the rate of change in time of the abundance of a variable (species, or taxonomical/functional unit) 
 
 
 $$\frac{dx_i}{dt} = \alpha_i x_i + \sum{ \beta_{ij} x_i x_j }$$
@@ -134,18 +128,31 @@ $$\begin{pmatrix} \dot{x_1} \\ \dot{x_2}  \end{pmatrix} = \begin{pmatrix} x_1 \\
 
 This matrix form for the parameter matrix with the growth term in the first column and interaction parameters in the right-side quadratic matrix corresponds to the output of the parameter in the R code:
 
-HERE USE 2 SPECIES EXAMPLE DATA!
 
-```{r, echo=FALSE, eval=FALSE}
+```{r}
+data("exampleData1")
 print(exampleData1$Parms)
 ```
+
+$$ = \begin{pmatrix} \alpha_1 & \beta_{11} & \beta_{12} \\  \alpha_2 & \beta_{21} & \beta_{22} \end{pmatrix}$$
+
+And for bigger systems such as the six species simulation of "exampleData2"
+
+```{r}
+data("exampleData2")
+print(exampleData2$Parms)
+```
+
+Model parameters for variables x~1~ to x~6~
+
+$$= \begin{pmatrix} \alpha_1 & \beta_{11} & \beta_{12} & \beta_{13} & \beta_{14} & \beta_{15} & \beta_{16} \\  \alpha_2 & \beta_{21} & \beta_{22} & \beta_{23} & \beta_{24} & \beta_{25} & \beta_{26} \\  \alpha_3 & \beta_{31} & \beta_{32} & \beta_{33} & \beta_{34} & \beta_{35} & \beta_{36} \\  \alpha_4 & \beta_{41} & \beta_{42} & \beta_{43} & \beta_{44} & \beta_{45} & \beta_{46} \\  \alpha_5 & \beta_{51} & \beta_{52} & \beta_{53} & \beta_{54} & \beta_{55} & \beta_{56} \\  \alpha_6 & \beta_{61} & \beta_{62} & \beta_{63} & \beta_{64} & \beta_{65} & \beta_{66} \end{pmatrix}$$
 
 ## Nonlinear Regression to estimate values for the model parameters
 
 To estimate the parameter matrix from the equations above, use
 
 ```{r, eval=FALSE}
-nlr <- gLVnonlinearRegression(data = exampleData2)
+nlrData2 <- gLVnonlinearRegression(data = exampleData2)
 ```
 
 ```{r, echo=FALSE}
@@ -183,14 +190,76 @@ points(exampleData2)
 
 # Interpretation of results and model identifiability
 
+```{r, warning=FALSE, message=FALSE}
+data <- exampleData2
+ident <- sensitivityAnalysis(Parms = nlrData2$Parms)
+```
+
+```{r, eval=FALSE}
+head(ident$sens)
+```
+
+
+```{r}
+head(ident$coll)
+```
+
+
+```{r}
+ident$coll[ident$coll[,"N"]==42,]
+```
+
+```{r}
+coll_index <- ident$coll[ident$coll[,"N"]==42,"collinearity"]
+```
+
+Thus the least level of precision required for a unique solution is 'r 1/coll_index'. This can be compared to the level of precision that the model solution fits the original data, described by the standard deviation of the residuals left between them:
+
+Level of precision achieved by the solution:
+```{r}
+nlrData2$residual_SD
+```
+Level of precision achievable by different parameterizations (different numeric solutions for the whole parameter matrix): 
+```{r}
+1/coll_index
+```
+
+Is the solution unique?
+```{r}
+nlrData2$residual_SD < 1/coll_index
+```
+
+
+How is the effect of changing values of each parameter single handedly to the output? (sensitivity analysis)
+```{r}
+sSens <- summary(ident$sens)
+print(sSens)
+```
+
+Less sesntivity (standard: lower L2 value) means that the parameter is harder to identify and the result is more correlated to the values that other parameter obtain. This is seen in the summary statistic of the parameter matrix with each standard deviation. Note that only more sensitive parameters (parameters ) are the ones with narrower standard deviation (significantly different from zero):
+
+```{r}
+sSens[order(sSens$L2, decreasing = TRUE),c("value","L2")]
+```
+
+Most sensitive parameters: `r rownames(sSens[order(sSens$L2, decreasing = TRUE),c("value","L2")])[1:10]` ...
+
+```{r}
+s <- cbind(1:42,summary(nlrData2))
+s[order(s[,5]),]
+```
+
+Most certain parameter values: `r order(s[,5])[1:10]` ...
+
+In these two list, eight out of ten parameters coincide (40, 3, 30, 6, 1, 5, 35, 37)
+
+
+
+
 ## Standard error of model residuals vs Parameter collinearity, Summary of parameter estimates
 
 
-GOTTA GET SENSITIVITY ANALYSIS RESULTS
 
-```{r}
-sd(nlrData2$Fit$residuals)
-```
 
 ## Network structures
 
