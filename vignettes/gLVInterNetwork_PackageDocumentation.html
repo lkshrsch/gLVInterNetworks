@@ -116,6 +116,13 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <pre class="sourceCode r"><code class="sourceCode r">exampleData &lt;-<span class="st"> </span><span class="kw">data.matrix</span>(df)</code></pre>
 <p>With which we have transformed the dates into numerical values. The original measurement time rate (per day) will be the changing rate for the estimated parameters after fitting the model to the data.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(exampleData)</code></pre>
+<pre><code>##      time        X1        X2        X3        X4        X5        X6
+## [1,]    1 0.6873188 0.4814508 0.5028041 0.9024577 1.4820795 1.0192897
+## [2,]    2 0.4056058 0.5804809 0.1040970 0.4784449 0.5495137 0.3043241
+## [3,]    3 0.3836464 0.4544713 0.1112002 0.3323488 0.3541356 0.3869106
+## [4,]    4 0.3459959 0.3978596 0.1333045 0.3648185 0.3228151 0.5533130
+## [5,]    5 0.2974755 0.3602963 0.1988122 0.3538549 0.4635254 0.6470609
+## [6,]    6 0.2209130 0.3089127 0.1913458 0.3735745 0.7044591 0.7841929</code></pre>
 </div>
 <div id="fitting-the-generalized-lotka-volterra-model-to-the-data" class="section level1">
 <h1>Fitting the generalized Lotka Volterra model to the data</h1>
@@ -128,6 +135,29 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <p>This matrix form for the parameter matrix with the growth term in the first column and interaction parameters in the right-side quadratic matrix corresponds to the output of the parameter in the R code:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">&quot;exampleData1&quot;</span>)
 <span class="kw">print</span>(exampleData1$Parms)</code></pre>
+<pre><code>##          growth                    
+## [1,]  1.5334121 -1.653507 -2.652309
+## [2,] -0.7558098  5.358952 -1.692742</code></pre>
+<p><span class="math">\[ = \begin{pmatrix} \alpha_1 &amp; \beta_{11} &amp; \beta_{12} \\  \alpha_2 &amp; \beta_{21} &amp; \beta_{22} \end{pmatrix}\]</span></p>
+<p>And for bigger systems such as the six species simulation of “exampleData2”</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">&quot;exampleData2&quot;</span>)
+<span class="kw">print</span>(exampleData2$Parms)</code></pre>
+<pre><code>##          growth                                                   
+## [1,]  2.1118070 -1.297752  0.000000  3.997974 -2.9417880  0.000000
+## [2,] -0.7378096  0.000000 -1.867226  1.589395  5.4730475 -2.216080
+## [3,]  3.9810420  2.710835 -6.945811 -1.537990  0.0000000 -3.820136
+## [4,]  0.1564243  3.865123 -3.941819 -3.679745 -1.3240106  0.000000
+## [5,]  1.9821135 -3.323225 -3.122314  0.000000  0.8075217 -1.989126
+## [6,]  3.6807751  0.000000  0.000000  0.000000 -8.9701972  1.306043
+##               
+## [1,] -2.625256
+## [2,]  0.000000
+## [3,]  0.000000
+## [4,]  1.906246
+## [5,]  2.062700
+## [6,] -1.251722</code></pre>
+<p>Model parameters for variables x<sub>1</sub> to <span class="math">\(x_{6}\)</span></p>
+<p><span class="math">\[= \begin{pmatrix} \alpha_1 &amp; \beta_{11} &amp; \beta_{12} &amp; \beta_{13} &amp; \beta_{14} &amp; \beta_{15} &amp; \beta_{16} \\  \alpha_2 &amp; \beta_{21} &amp; \beta_{22} &amp; \beta_{23} &amp; \beta_{24} &amp; \beta_{25} &amp; \beta_{26} \\  \alpha_3 &amp; \beta_{31} &amp; \beta_{32} &amp; \beta_{33} &amp; \beta_{34} &amp; \beta_{35} &amp; \beta_{36} \\  \alpha_4 &amp; \beta_{41} &amp; \beta_{42} &amp; \beta_{43} &amp; \beta_{44} &amp; \beta_{45} &amp; \beta_{46} \\  \alpha_5 &amp; \beta_{51} &amp; \beta_{52} &amp; \beta_{53} &amp; \beta_{54} &amp; \beta_{55} &amp; \beta_{56} \\  \alpha_6 &amp; \beta_{61} &amp; \beta_{62} &amp; \beta_{63} &amp; \beta_{64} &amp; \beta_{65} &amp; \beta_{66} \end{pmatrix}\]</span></p>
 <div id="nonlinear-regression-to-estimate-values-for-the-model-parameters" class="section level2">
 <h2>Nonlinear Regression to estimate values for the model parameters</h2>
 <p>To estimate the parameter matrix from the equations above, use</p>
