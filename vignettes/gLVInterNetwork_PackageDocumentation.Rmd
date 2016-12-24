@@ -79,32 +79,29 @@ plot(exampleData2, legend = T)
 
 # Loading data sets
 
-For this example I stored a table of observations with a time column with the dates when the observations were taken. The .csv file is a text file with entries sepparated by semicolons ";".
+The package comes with a small example of raw data stored in a csv file with a time column with the dates when the observations were taken. The .csv file is a text file with entries sepparated by semicolons ";". To get the absolute path of the file 'example1.csv' installed in the package directory 'rawdata/' use
+
+```{r}
+fpath <- system.file("rawdata", "example1.csv", package="gLVInterNetworks")
+```
+
+The load the file
 
 ```{r, loading_a_csv_file_with_dates, eval=FALSE}
-setwd("home/user/example/directory/")
-df <- read.csv2("realData.csv", header = TRUE)
+df <- read.csv2(file = fpath, header = TRUE)
 ```
 
-DF IS AN EXAMPLE TEXT DATA IN PACKAGE
-LOAD(DF)
-
-```{r, echo=FALSE}
-
-```
-
-
-```{r, eval=FALSE}
+```{r}
 head(df)
 ```
 
-```{r, eval=FALSE}
+```{r}
 matplot(df[,-1])
 ```
 
 We can convert the data.frame to a numerical matrix using
 
-```{r, eval=FALSE}
+```{r}
 exampleData <- data.matrix(df)
 ```
 
@@ -116,8 +113,7 @@ head(exampleData)
 
 # Fitting the generalized Lotka Volterra model to the data
 
-The generalized Lotka Volterra model consists in a set of differential equations, nonlinear in the variables $x_i$. It describes the rate of change in time of the abundance of a variable (species, or taxonomical/functional unit) 
-
+The generalized Lotka Volterra model consists in a set of differential equations, nonlinear in the variables $x$. It describes the rate of change in time of the abundance of a variable (species, or taxonomical/functional unit) 
 
 
 $$\frac{dx_i}{dt} = \alpha_i x_i + \sum{ \beta_{ij} x_i x_j }$$
