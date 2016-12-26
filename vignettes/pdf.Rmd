@@ -213,7 +213,7 @@ ident$coll[ident$coll[,"N"]==42,]
 coll_index <- ident$coll[ident$coll[,"N"]==42,"collinearity"]
 ```
 
-Thus the least level of precision required for a unique solution is 'r 1/coll_index'. This can be compared to the level of precision that the model solution fits the original data, described by the standard deviation of the residuals left between them:
+Thus the least level of precision required for a unique solution is `(1/coll_index)`. This can be compared to the level of precision that the model solution fits the original data, described by the standard deviation of the residuals left between them:
 
 Level of precision achieved by the solution:
 ```{r}

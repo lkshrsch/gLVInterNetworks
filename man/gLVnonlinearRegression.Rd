@@ -16,11 +16,14 @@ Data input containing a time series of observations in longitudinal matrix form}
   \item{parms0}{
 Optional. Starting parameter vector. Default = Zero vector}
   \item{ftol}{
-Objective function output tolerance before stopping iterative optimization}
+Minimum change in the value of the objective function (sum of squared residuals) 
+between two consecutive steps before 
+stopping iterative optimization}
   \item{ptol}{
-Parameter change tolerance in output of objective function}
+Minimum change in the value of parameters being estimated between two consecutive 
+steps before stopping iterative optimization}
  \item{maxiter}{
-Maximal number of iterations allowed before breaking the gradient search algorithm}
+Maximal number of iterations allowed before breaking the optimization algorithm}
  \item{lowerbound}{
 Numerical vector of equal length as parameter vector describing lower bound for constrained parameter search
 }
@@ -35,11 +38,32 @@ Method used for optimization of the objective function. Default is "Marq" for Le
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+\item{Parms}{Estimated parameter matrix }
+\item{SSR}{The value of the sum of squared residuals of the found solution}
+\item{residual_SD}{The estimated standard deviation of the data stochasticity 
+in respect to the solution found}
+\item{SE}{A matrix contatining the standard errors of each estimated 
+parameter}
+\item{residuals_t.test}{The result of a t test with the null hypothesis of the 
+residuals from the model solution being normally distributed with standard error 
+'residual_SD'}
+\item{message}{A text message related to the reason why the optimization algorithm 
+stopped}
+\item{obs}{A matrix with the calculated abundances on each timestep according to the 
+estimated parameters}
+\item{Fit}{The object returned by the optimization algorithm. It is a list 
+containing further details of the optimization algorithm run}
+\item{df}{The degrees of freedom}
+\item{quantitative}{Only when validating against in Silico data: The ratio of 
+estimated parameters that contain the original value within the 95\% confidence 
+interval given by their standard error (displayed in 'SE')}
+\item{qualitative1}{Only when validating against in Silico data: The ratio of 
+correctly retrieved edges from the original interaction network}
+\item{qualititative2}{Only when validating against in Silico data: The ratio of 
+correctly retrieved edges from the original interaction network after setting 
+estimated parameters that are not significantly different from zero to zero (i.e. 
+parameters that contain the zero in their 95\% confidence interval as given by 
+their standard error)}
 }
 \references{
 %% ~put references to the literature/web site here ~
@@ -55,9 +79,6 @@ Method used for optimization of the objective function. Default is "Marq" for Le
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
