@@ -56,12 +56,15 @@ code > span.er { color: #ff0000; font-weight: bold; }
 
 
 
-<div id="generation-of-in-silico-data" class="section level1">
-<h1>Generation of in silico data</h1>
+<div id="installation" class="section level1">
+<h1>Installation</h1>
 <p>To download the package from my github account use</p>
 <pre class="sourceCode r"><code class="sourceCode r">devtools::<span class="kw">install_github</span>(<span class="st">&quot;lkshrsch/gLVInterNetworks&quot;</span>, <span class="dt">build_vignettes =</span> <span class="ot">TRUE</span>)</code></pre>
 <p>To load the package into the R environment</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(gLVInterNetworks)</code></pre>
+</div>
+<div id="generation-of-in-silico-data" class="section level1">
+<h1>Generation of in silico data</h1>
 <p>To generate in silico data sets we use the following command with the following mandatory arguments:</p>
 <ul>
 <li>species: The amount of variables in the system</li>
@@ -435,14 +438,52 @@ s[<span class="kw">order</span>(s[,<span class="dv">5</span>]),]</code></pre>
 <div id="linear-regression" class="section level1">
 <h1>Linear regression</h1>
 <p>A linearized algebraic and discrete version of the model equations is possible through decoupling of the variables</p>
-<p>SHOW EQUATION</p>
+<p><span class="math">\[log(x_i(t+1) ) = \alpha_i + \sum{ \beta_{ij}  x_j(t) }\]</span></p>
 <p>An estimate for the parameters in this form is quickly and easy achievable through linear regression</p>
 <pre class="sourceCode r"><code class="sourceCode r">lrData1 &lt;-<span class="st"> </span><span class="kw">gLVlinearRegression</span>(<span class="dt">data =</span> exampleData1)</code></pre>
 <p>We can inspect the solution just like we did before with the results from the nonlinear regression.</p>
-<p>In contrast to the nonlinear regression, the parameter for the linear model are a unique solution as the sum of squared error</p>
-<div id="network-structures" class="section level2">
-<h2>Network structures</h2>
+<p>In contrast to the nonlinear regression, the parameter for the linear model are a unique solution as the sum of squared error has a global optimum.</p>
+<p>Due to errors introduced in the discretization, slope approximation and due to the neglection of the time-correlation between residuals, the solution to the linear regression is distorted and only accurate in very small and simple systems. Nevertheless, it is often useful to compute the linear regression parameter estimates to provide them as alternative starting values (parms0 argument) for the nonlinear regression when it fails to converge from the zero start vector</p>
+<pre class="sourceCode r"><code class="sourceCode r">nlrData1 &lt;-<span class="st"> </span><span class="kw">gLVnonlinearRegression</span>(<span class="dt">data =</span> exampleData1, <span class="dt">parms0 =</span> lrData1$Parms)</code></pre>
+<p>Often in large systems the linear regression returns very high parameter estimates, which are not useful as start vectors for the nonlinear regression nor have realistic biological interpretations. For these cases it is useful to perform shrinkage of the parameter matrix to avoid numerical instabilites. This can be done through regularization:</p>
+<pre class="sourceCode r"><code class="sourceCode r">lrData2 &lt;-<span class="st"> </span><span class="kw">gLVlinearRegression</span>(<span class="dt">data =</span> exampleData2)
+lrData2$Parms</code></pre>
+<pre><code>##           [,1]       [,2]        [,3]       [,4]       [,5]       [,6]
+## [1,] 2.1875364  5.9237858  -9.3629157  -3.211697   5.586053 -3.3372798
+## [2,] 3.3160375  0.3180209   0.1691785  18.732517 -14.850432  4.6608749
+## [3,] 3.7788314 10.3455179 -12.4982440 -10.370104   4.831088 -4.1910615
+## [4,] 0.9519292  1.2810992  -0.6250050  -1.056990  -5.051056  1.1736605
+## [5,] 2.0550439 -4.1894790  -2.1775565   1.249551   1.953121 -2.3153159
+## [6,] 2.6369452 -1.2376828   0.6139137   2.461730  -4.044600  0.2757798
+##            [,7]
+## [1,] -1.2709429
+## [2,] -5.9353681
+## [3,] -0.5140691
+## [4,]  0.7444985
+## [5,]  1.2413160
+## [6,] -2.0581190</code></pre>
+<pre><code>## [1] &quot;range of estimated parameters: [-14.9 , 18.7]&quot;</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">lrData2_regularized &lt;-<span class="st"> </span><span class="kw">gLVlinearRegression</span>(<span class="dt">data =</span> exampleData2, <span class="dt">regularization =</span> <span class="ot">TRUE</span>, <span class="dt">alpha =</span> <span class="fl">0.5</span>)
+lrData2_regularized$Parms</code></pre>
+<pre><code>##              [,1]       [,2]      [,3]       [,4]      [,5] [,6]
+## [1,] -0.369754001  0.0000000  0.000000  0.0000000  0.000000    0
+## [2,] -0.317558730  0.0000000  0.000000  0.0000000  0.000000    0
+## [3,] -0.346428657  0.0000000  0.000000  0.0000000  0.000000    0
+## [4,]  0.937850394 -0.7179890 -0.683427 -0.1689316 -1.914921    0
+## [5,]  0.006023539  0.0000000  0.000000  0.0000000  0.000000    0
+## [6,]  2.220475714 -0.0407287  0.000000  0.0000000 -3.001570    0
+##            [,7]
+## [1,]  0.0000000
+## [2,]  0.0000000
+## [3,]  0.0000000
+## [4,]  0.6542529
+## [5,]  0.0000000
+## [6,] -1.4006720</code></pre>
+<pre><code>## [1] &quot;range of estimated parameters after regularization: [-3 , 2.2]&quot;</code></pre>
+<p>Note that regularization is computed through an optimization method involving cross-validation with random partitions of the data, so the solution is not unique and likely to change after different runs.</p>
 </div>
+<div id="network-structures" class="section level1">
+<h1>Network structures</h1>
 </div>
 
 

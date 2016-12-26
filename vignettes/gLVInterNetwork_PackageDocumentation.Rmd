@@ -351,13 +351,13 @@ Is the solution unique?
 nlrData2$residual_SD < 1/coll_index
 ```
 
-This parameterization 
+This parameterization ... INTUITIVE EXPLANATION. TALK ALSO ABOUT ERROR IN DATA AND HOW DATA PRODUCES A NATURAL LIMIT IN THE PRECISION ACHIEVABLE. IF DATA IS TOO NOISY; AND PARAMETERS TOO COLLINEAR; IT IS IMPOSSIBLE TO TRY TO GENERATE UNIQUE SOLUTIONS WITHOUT OVERFITTING..!
 
 # Linear regression
 
 A linearized algebraic and discrete version of the model equations is possible through decoupling of the variables
 
-SHOW EQUATION
+$$log(x_i(t+1) ) = \alpha_i + \sum{ \beta_{ij}  x_j(t) }$$
 
 An estimate for the parameters in this form is quickly and easy achievable through linear regression
 
@@ -367,7 +367,35 @@ lrData1 <- gLVlinearRegression(data = exampleData1)
 
 We can inspect the solution just like we did before with the results from the nonlinear regression. 
 
-In contrast to the nonlinear regression, the parameter for the linear model are a unique solution as the sum of squared error
+In contrast to the nonlinear regression, the parameter for the linear model are a unique solution as the sum of squared error has a global optimum.
+
+Due to errors introduced in the discretization, slope approximation and due to the neglection of the time-correlation between residuals, the solution to the linear regression is distorted and only accurate in very small and simple systems. Nevertheless, it is often useful to compute the linear regression parameter estimates to provide them as alternative starting values (parms0 argument) for the nonlinear regression when it fails to converge from the zero start vector
+
+```{r, eval=FALSE}
+nlrData1 <- gLVnonlinearRegression(data = exampleData1, parms0 = lrData1$Parms)
+```
+
+Often in large systems the linear regression returns very high parameter estimates, which are not useful as start vectors for the nonlinear regression nor have realistic biological interpretations. For these cases it is useful to perform shrinkage of the parameter matrix to avoid numerical instabilites. This can be done through regularization:
+
+```{r}
+lrData2 <- gLVlinearRegression(data = exampleData2)
+lrData2$Parms
+```
+
+```{r, echo=FALSE}
+paste0("range of estimated parameters: [", round(min(lrData2$Parms),1), " , ", round(max(lrData2$Parms),1), "]")
+```
+
+```{r}
+lrData2_regularized <- gLVlinearRegression(data = exampleData2, regularization = TRUE, alpha = 0.5)
+lrData2_regularized$Parms
+```
+
+```{r, echo=FALSE}
+paste0("range of estimated parameters after regularization: [", round(min(lrData2_regularized$Parms),1), " , ", round(max(lrData2_regularized$Parms),1), "]")
+```
+
+Note that regularization is computed through an optimization method involving cross-validation with random partitions of the data, so the solution is not unique and likely to change after different runs.
 
 # Network structures
 
