@@ -63,6 +63,21 @@ From which *species*, *timepoints*, *noise*, *sparsity*, and *testData* correspo
 * Parms : Is the randomly generated parameter matrix under the given input constraints. It contains one row per variables / species in the system and the parameters correspond to :
 * obs : Corresponds to the solution using the estimated model parameters for the time interval given. This are the values plotted when using 
 
+
+To visualize the representation of the system as an interaction network, use the plotGraph() function over the object:
+
+```{r}
+plotGraph(exampleData1, vsize = 50, edgeSize = 1, main="Interaction network for exampleData1")
+```
+
+Optionally, the network can be plotted with sizes of the vertices and edges relative to the magnitude they represent by activating the relativeVertexSize and relativeEdgeSize flags (setting them to TRUE, with default value FALSE). In this case, the vertex sizes are proportional to the mean abundance of the respective variable they represent, weighted by an arbitrary and user set scaling factor given by the argument "vsize". The "relativeEdgeSize" flag sets the width of the edges relative to the magnitude of the interaction parameter they represent. In order to visualize the numeric value of the interaction parameters, the user can set the "verbose" flag to TRUE.
+
+```{r}
+plotGraph(exampleData1, relativeVSize = TRUE ,vsize = 25, relativeEdgeSize = TRUE, main="Relative vertex and edge sizes", verbose = TRUE)
+```
+
+
+
 ```{r, basic_plotting_data_with_extra_legend}
 plot(exampleData1, pch = 1:exampleData1$species)
 legend("topright", 

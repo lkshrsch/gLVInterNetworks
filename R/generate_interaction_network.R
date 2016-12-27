@@ -1,6 +1,6 @@
 
 generate_interaction_network <- 
-function(parms_matrix, observations, substrate=FALSE, vsize=0.1, verbose=FALSE, keepNames=FALSE ){
+function(parms_matrix, observations, relativeVSize = FALSE, relativeEdgeSize = FALSE, edgeSize ,  substrate=FALSE, vsize=0.1, verbose=FALSE, keepNames=FALSE ){
   
   #require(igraph)
   
@@ -39,7 +39,9 @@ function(parms_matrix, observations, substrate=FALSE, vsize=0.1, verbose=FALSE, 
     
     
     if(  abs(c(interaction_pars)[i]) > 0){
+      if(relativeEdgeSize){
       igraph::E(network)[i]$width <- 4* abs( interaction_pars[i]/min(interaction_pars)  )
+      }else{igraph::E(network)[i]$width = edgeSize}
     }
     
     if(verbose){
@@ -77,12 +79,16 @@ function(parms_matrix, observations, substrate=FALSE, vsize=0.1, verbose=FALSE, 
     }
     if (linear_pars[i]<0){   
       igraph::V(network)[i]$color="red"
-      igraph::V(network)[i]$size = (relative_abundances[i]/min(relative_abundances))/vsize # normalize to avoid negative values .  Vertex size should represent relative abundance of species... not linear parameter.. linear parameter maybe as extra line coming from nowhere (ecosystem)
       
+      if(relativeVSize){
+      
+      igraph::V(network)[i]$size = (relative_abundances[i]/min(relative_abundances))*vsize # normalize to avoid negative values .  Vertex size should represent relative abundance of species... not linear parameter.. linear parameter maybe as extra line coming from nowhere (ecosystem)
+      }else{igraph::V(network)[i]$size = vsize}
     }
     if (linear_pars[i]>0){igraph::V(network)[i]$color="blue"}
-    igraph::V(network)[i]$size = (relative_abundances[i]/min(relative_abundances))/vsize # normalize to avoid negative values .  Vertex size should represent relative abundance of species... not linear parameter.. linear parameter maybe as extra line coming from nowhere (ecosystem)
-    
+    if(relativeVSize){
+    igraph::V(network)[i]$size = (relative_abundances[i]/min(relative_abundances))*vsize # normalize to avoid negative values .  Vertex size should represent relative abundance of species... not linear parameter.. linear parameter maybe as extra line coming from nowhere (ecosystem)
+    }else{igraph::V(network)[i]$size = vsize}
   }
   
   return(network)
