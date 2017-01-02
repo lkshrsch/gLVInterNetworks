@@ -53,8 +53,8 @@ compareStructures <- function(data, structures, verbose=FALSE, iterations = 1){
   
   for(i in 1:(nrow(ssr)-1)){
     ssr[i,1] <- i
-    try(ssr[i,2] <- round(result[[i]]$SSR,3), silent = T)
-    ssr[i,3] <- paste0(structures$bounds[i,],collapse = "")
+    ssr[i,2] <- paste0(structures$bounds[i,],collapse = "")
+    try(ssr[i,3] <- round(result[[i]]$SSR,3), silent = T)
     ssr[i,4] <- round(sd(result[[i]]$Fit$residuals),3)
   }
   ssr[nrow(ssr),1:4] <- c("Original", 0 , structure, data$noise)

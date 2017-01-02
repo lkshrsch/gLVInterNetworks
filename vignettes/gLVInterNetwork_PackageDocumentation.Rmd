@@ -16,10 +16,14 @@ library(knitr)
 opts_chunk$set(out.width='350px', dpi=200, fig.width = 5, fig.height=5, background = "lightcyan3")
 ```
 
-To download the package from my github account use
+To download the package from my github account use: 
+
 ```{r, eval=FALSE}
 devtools::install_github("lkshrsch/gLVInterNetworks", build_vignettes = TRUE)
 ```
+
+Note: After installing the package for the first time, or updating to a new version, restart the RStudio session before usage.
+
 
 
 To load the package into the R environment 
@@ -454,7 +458,7 @@ points(exampleData1)
 
 The best 10 networks:
 ```{r}
-best10networks <- as.character(comparisonAllStructuresData1$networks[1:10,"Network"])
+as.character(comparisonAllStructuresData1$networks[1:10,"Network"])
 ```
 
 
@@ -476,4 +480,4 @@ data(comparisonTwoStructuresData1)
 comparisonTwoStructuresData1$networks
 ```
 
-Here we see how even in a noisy system, with a good prior guess on proper data structure we can focus the evaluation on a subset of structures and even find better solutions with alternative structures which might explain the data better. In this case the "hunch" came from knowing the original data structure, but this can come from knowledge from biological information, previous literature research, etc. Testing of different hypothesis is a crucial step when using fitted models to noisy data, and for presentation and further usage of the results. 
+Here we see how even in a noisy system, with a good prior guess on proper data structure we can focus the evaluation on a subset of structures and even find better solutions with alternative structures which might explain the data better. In this case the "hunch"" for testing the structure "+--+--" came from knowing the original data structure, but this can come from knowledge from biological information, previous literature research, etc. Testing of different hypothesis is a crucial step when using fitted models to noisy data, and for presentation and further usage of the results. 
