@@ -414,5 +414,66 @@ Note that regularization is computed through an optimization method involving cr
 
 # Network structures
 
+In order to compare explicit network structures based on prior knowledge of the system or to test for different solutions, 
 
 
+this function generates either a complete list containing all possible network topologies for n species, or generates a list based on a pre-specified list of network structures to test.
+
+```{r}
+s <- networkStructures(n = 2)
+s$bounds
+```
+
+Given a list of network structures, estimate gLV parameters constrained to maintain such structure, and compare the results from each fitted model.
+
+**iterations** Number of times the regression algorithm should be performed on each structure. The default is 1 for only one parameter estimation run per structure. If set to integers x > 1 the algorithm runs x times and keeps the best solution according to the goodness of fit. The number of different solutions found and the number of times the optimal solution was achieved is kept in the regression attributes in order to evaluate how many local maximas were found, and how certain the user can be that the kept optimal could approximate a global optimum point.
+
+Having no prior knowledge on characteristics of this system which could allow us to test qualititative constraints on specific interactions, we can first test all 64 possible structures and see which ones perform better for explaining the data. We set iteration = 2 to perform two parameter estimation steps on each structure each time with different randomly generated starting parameters (obeying the qualitative structure of the network to test). In general it is not practical to perform these evaluations, as it takes a lot of time.
+
+In practice this takes 28 minutes to complete (characteristics of my laptop: DELL intel core i3...) 
+```{r, eval=FALSE}
+comparisonAllStructuresData1 <- compareStructures(data = exampleData1, structures = s, iterations = 2)
+```
+
+
+```{r, echo=FALSE}
+data(comparisonAllStructuresData1)
+```
+
+```{r}
+comparisonAllStructuresData1$networks
+```
+
+From this we see that there are several 
+
+```{r}
+plot(comparisonAllStructuresData1$runs[[29]], type="l")
+points(exampleData1)
+```
+
+
+The best 10 networks:
+```{r}
+best10networks <- as.character(comparisonAllStructuresData1$networks[1:10,"Network"])
+```
+
+
+```{r}
+structures4testing <- networkStructures(testStructures = c("++++--","+--+--"))
+structures4testing
+```
+
+```{r, eval=FALSE}
+comparisonTwoStructuresData1 <- compareStructures(data = exampleData1, structures = structures4testing, iterations = 5)
+```
+
+```{r, echo=FALSE}
+data(comparisonTwoStructuresData1)
+```
+
+
+```{r}
+comparisonTwoStructuresData1$networks
+```
+
+Here we see how even in a noisy system, with a good prior guess on proper data structure we can focus the evaluation on a subset of structures and even find better solutions with alternative structures which might explain the data better. In this case the "hunch" came from knowing the original data structure, but this can come from knowledge from biological information, previous literature research, etc. Testing of different hypothesis is a crucial step when using fitted models to noisy data, and for presentation and further usage of the results. 

@@ -9,8 +9,7 @@ system or to test for different solutions, this function generates either a comp
 list containing all possible network topologies for n species, or generates a list 
 based on a pre-specified list of network structures to test.
 }
-\usage{networkStructures <- function(n, upperBound = 10, lowerBound = -10, 
-testStructures = c("+--+--","++----")
+\usage{networkStructures <- function(n, upperBound = 10, lowerBound = -10, testStructures = c("+--+--","++----"))
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
