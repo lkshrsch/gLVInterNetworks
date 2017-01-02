@@ -71,6 +71,8 @@ function(data, parms0 = NULL, ftol = 1e-8 , ptol = 1e-8, maxiter = 100, lowerbou
     
     Result_nonlin$obs <- reshat
     
+    Result_nonlin$parms0 <- parms0
+    
     class(Result_nonlin) <- "Inference_run"
     
     return(Result_nonlin)
@@ -86,7 +88,7 @@ function(data, parms0 = NULL, ftol = 1e-8 , ptol = 1e-8, maxiter = 100, lowerbou
     Result_nonlin$message <- "Solution of model failed. Overshot"
     reshat <- solveLV_bio(Fit$par, times = seq(0,data$obs[nrow(data$obs),1],by = 0.01),States = data$obs[1,-1])
     Result_nonlin$Fit <- Fit
-    
+    Result_nonlin$parms0 <- parms0
     Result_nonlin$obs <- reshat
     
     class(Result_nonlin) <- "Inference_run"
@@ -120,7 +122,7 @@ function(data, parms0 = NULL, ftol = 1e-8 , ptol = 1e-8, maxiter = 100, lowerbou
     Result_nonlin$message <- "Failure on computing summary statistics. Solution converged to optimal point estimates"
     reshat <- solveLV_bio(Fit$par, times = seq(0,data$obs[nrow(data$obs),1],by = 0.01),States = data$obs[1,-1])
     Result_nonlin$Fit <- Fit
-    
+    Result_nonlin$parms0 <- parms0
     Result_nonlin$obs <- reshat
     
     class(Result_nonlin) <- "Inference_run"
@@ -152,7 +154,7 @@ function(data, parms0 = NULL, ftol = 1e-8 , ptol = 1e-8, maxiter = 100, lowerbou
     Result_nonlin$residuals_t.test <- mean_zero_of_errors_nonlin
     Result_nonlin$message <- Fit$message
     Result_nonlin$obs <- reshat
-    
+    Result_nonlin$parms0 <- parms0
     Result_nonlin$Fit <- Fit
     
     Result_nonlin$df <- ncol(data$obs[,-1])*nrow(data$obs[,-1]) - ncol(data$obs[,-1])*(ncol(data$obs[,-1])+1) # in inference function. Its weird like this because starting point is given, thus one row of df less...

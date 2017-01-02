@@ -29,7 +29,6 @@ library(gLVInterNetworks)
 
 # Generation of in silico data
 
-
 To generate in silico data sets we use the following command with the following mandatory arguments:
 
 * species: The amount of variables in the system
@@ -64,18 +63,19 @@ From which *species*, *timepoints*, *noise*, *sparsity*, and *testData* correspo
 * obs : Corresponds to the solution using the estimated model parameters for the time interval given. This are the values plotted when using 
 
 
-To visualize the representation of the system as an interaction network, use the plotGraph() function over the object:
+To visualize the representation of the system as an interaction network, use the plotGraph() function over the object. Arguments vsize and edgeSize adjust the size of the vertices and edges respectively and must be tuned by the user when visualizing different sized networks. The "verbose" argument or flag prints also the numeric value of the interaction parameters over the respective edges connecting the variables.
 
 ```{r}
-plotGraph(exampleData1, vsize = 50, edgeSize = 1, main="Interaction network for exampleData1")
+plotGraph(x = exampleData1, vsize = 50, edgeSize = 1, main="Interaction network for exampleData1", verbose = TRUE)
 ```
 
-Optionally, the network can be plotted with sizes of the vertices and edges relative to the magnitude they represent by activating the relativeVertexSize and relativeEdgeSize flags (setting them to TRUE, with default value FALSE). In this case, the vertex sizes are proportional to the mean abundance of the respective variable they represent, weighted by an arbitrary and user set scaling factor given by the argument "vsize". The "relativeEdgeSize" flag sets the width of the edges relative to the magnitude of the interaction parameter they represent. In order to visualize the numeric value of the interaction parameters, the user can set the "verbose" flag to TRUE.
+Optionally, the network can be plotted with sizes of the vertices and edges relative to the magnitude they represent by activating the relativeVertexSize and relativeEdgeSize flags (setting them to TRUE, with default value FALSE). In this case, the vertex sizes are proportional to the mean abundance of the respective variable they represent, weighted by an arbitrary and user set scaling factor given by the argument "vsize". The "relativeEdgeSize" flag sets the width of the edges relative to the magnitude of the interaction parameter they represent. 
 
 ```{r}
-plotGraph(exampleData1, relativeVSize = TRUE ,vsize = 25, relativeEdgeSize = TRUE, main="Relative vertex and edge sizes", verbose = TRUE)
+plotGraph(x = exampleData1, relativeVSize = TRUE ,vsize = 25, relativeEdgeSize = TRUE, main="Relative vertex and edge sizes")
 ```
 
+Basic plotting of the time series data:
 
 
 ```{r, basic_plotting_data_with_extra_legend}
@@ -410,7 +410,9 @@ lrData2_regularized$Parms
 paste0("range of estimated parameters after regularization: [", round(min(lrData2_regularized$Parms),1), " , ", round(max(lrData2_regularized$Parms),1), "]")
 ```
 
-Note that regularization is computed through an optimization method involving cross-validation with random partitions of the data, so the solution is not unique and likely to change after different runs.
+Note that regularization is computed through an optimization method involving cross-validation with random partitions of the data, so the solution is not unique and likely to change in different runs.
 
 # Network structures
+
+
 

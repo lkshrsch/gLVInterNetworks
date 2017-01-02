@@ -1,5 +1,5 @@
 plotGraph <- 
-function(x, vsize = 0.1, main = NULL, relativeVSize=FALSE, relativeEdgeSize=FALSE, edgeSize, verbose = FALSE, keepNames = FALSE, ...){
+function(x, vsize = 25, main = NULL, relativeVSize=FALSE, relativeEdgeSize=FALSE, edgeSize=1, verbose = FALSE, keepNames = FALSE, ...){
   
   if(class(x) == "real_data"){return("Can't draw an interaction network of real data..! Provide inference results")}
   
