@@ -70,13 +70,21 @@ From which *species*, *timepoints*, *noise*, *sparsity*, and *testData* correspo
 To visualize the representation of the system as an interaction network, use the plotGraph() function over the object. Arguments vsize and edgeSize adjust the size of the vertices and edges respectively and must be tuned by the user when visualizing different sized networks. The "verbose" argument or flag prints also the numeric value of the interaction parameters over the respective edges connecting the variables.
 
 ```{r}
-plotGraph(x = exampleData1, vsize = 50, edgeSize = 1, main="Interaction network for exampleData1", verbose = TRUE)
+plotGraph(x = exampleData1, 
+          vsize = 50, 
+          edgeSize = 1, 
+          main="Interaction network for exampleData1", 
+          verbose = TRUE)
 ```
 
 Optionally, the network can be plotted with sizes of the vertices and edges relative to the magnitude they represent by activating the relativeVertexSize and relativeEdgeSize flags (setting them to TRUE, with default value FALSE). In this case, the vertex sizes are proportional to the mean abundance of the respective variable they represent, weighted by an arbitrary and user set scaling factor given by the argument "vsize". The "relativeEdgeSize" flag sets the width of the edges relative to the magnitude of the interaction parameter they represent. 
 
 ```{r}
-plotGraph(x = exampleData1, relativeVSize = TRUE ,vsize = 25, relativeEdgeSize = TRUE, main="Relative vertex and edge sizes")
+plotGraph(x = exampleData1,
+          relativeVSize = TRUE ,
+          vsize = 25, 
+          relativeEdgeSize = TRUE, 
+          main="Relative vertex and edge sizes")
 ```
 
 Basic plotting of the time series data:
