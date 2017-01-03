@@ -370,7 +370,6 @@ Is the solution unique?
 nlrData2$residual_SD < 1/coll_index
 ```
 
-This parameterization ... INTUITIVE EXPLANATION. TALK ALSO ABOUT ERROR IN DATA AND HOW DATA PRODUCES A NATURAL LIMIT IN THE PRECISION ACHIEVABLE. IF DATA IS TOO NOISY; AND PARAMETERS TOO COLLINEAR; IT IS IMPOSSIBLE TO TRY TO GENERATE UNIQUE SOLUTIONS WITHOUT OVERFITTING..!
 
 # Linear regression
 
@@ -416,51 +415,76 @@ paste0("range of estimated parameters after regularization: [", round(min(lrData
 
 Note that regularization is computed through an optimization method involving cross-validation with random partitions of the data, so the solution is not unique and likely to change in different runs.
 
-# Network structures
+# Comparing different Network Structures
 
-In order to compare explicit network structures based on prior knowledge of the system or to test for different solutions, 
+In order to compare explicit network structures based on prior knowledge of the system or to test for different solutions, the functions networkStructures() and compareStructures() can be used.
 
+A network structure or topology is defined here as the qualitative values that the edges connecting the nodes take, in this case differentiating between possitive "+" , negative "-", and nonexistent interactions "0". Because the optimization algorithms never estimate a parameter value to be exactly zero, the results of a fitted model will always contain just "+" or "-" edges. Further inspection of the estimated values can give hints on values that approximate zero.
 
-this function generates either a complete list containing all possible network topologies for n species, or generates a list based on a pre-specified list of network structures to test.
+The codification of a network structure is then a vector derived from the parameter matrix. 
+
+$$ \begin{pmatrix} \alpha_1 & \beta_{11} & \beta_{12} \\  \alpha_2 & \beta_{21} & \beta_{22} \end{pmatrix}$$
+
+As a vector will look like the following:
+
+$$ ( \alpha_1 , \alpha_2 , \beta_{11} , \beta_{21} , \beta_{21}, , \beta_{22} ) $$
+
+For example, the following parameter matrix from "exampleData1":
 
 ```{r}
-s <- networkStructures(n = 2)
-s$bounds
+print(exampleData1$Parms)
 ```
 
-Given a list of network structures, estimate gLV parameters constrained to maintain such structure, and compare the results from each fitted model.
+Has the following structure:" + - - + - - "
+
+
+
+The function **networkStructures()** generates either a complete list containing all possible network topologies for n species, or generates a list based on a pre-specified list of network structures to test.
+
+```{r}
+## generate all possible structures for a network containing 2 species:
+s <- networkStructures(n = 2)
+head(s$bounds)
+head(s$ub)
+head(s$lb)
+```
+
+After having generated the list of the structures to test, and their respective lower and upper bounds for the parameter estimation process (described by s\$ub and s\$lb), we can give this as an input to the function compareStructures().
 
 **iterations** Number of times the regression algorithm should be performed on each structure. The default is 1 for only one parameter estimation run per structure. If set to integers x > 1 the algorithm runs x times and keeps the best solution according to the goodness of fit. The number of different solutions found and the number of times the optimal solution was achieved is kept in the regression attributes in order to evaluate how many local maximas were found, and how certain the user can be that the kept optimal could approximate a global optimum point.
 
 Having no prior knowledge on characteristics of this system which could allow us to test qualititative constraints on specific interactions, we can first test all 64 possible structures and see which ones perform better for explaining the data. We set iteration = 2 to perform two parameter estimation steps on each structure each time with different randomly generated starting parameters (obeying the qualitative structure of the network to test). In general it is not practical to perform these evaluations, as it takes a lot of time.
 
-In practice this takes 28 minutes to complete (characteristics of my laptop: DELL intel core i3...) 
+In practice this takes 28 minutes to complete (DELL - OS: Windows7 - intel core i3-2330M CPU 2.20GHz ) 
 ```{r, eval=FALSE}
 comparisonAllStructuresData1 <- compareStructures(data = exampleData1, structures = s, iterations = 2)
 ```
-
 
 ```{r, echo=FALSE}
 data(comparisonAllStructuresData1)
 ```
 
+The result contains a list with all network structures tested, and their goodness of fit described by the sum of squared residuals of the best solution, and the estimated variance of the data stochasticity:
+
 ```{r}
 comparisonAllStructuresData1$networks
 ```
 
-From this we see that there are several 
+First we see that most networks ( in total 38 ) failed to achieve a viable solution for the observations on two tries each. This could either mean that the starting vectors on each try generated too unstable numeric solution to allow for convergence, or that the constraints on the parameters just do not allow any solution which doesnt exponentially grow to infinite for the given timepoints (this is likely to be the reason behind the failing of network structures with a lot of "+" parameters which result in uncontrolled exponentially growing variables).
+
+We can inspect the detailed result from the nonlinear regression by giving the index of the network in question to the saved runs in $runs:
 
 ```{r}
 plot(comparisonAllStructuresData1$runs[[29]], type="l")
 points(exampleData1)
 ```
 
-
 The best 10 networks:
 ```{r}
 as.character(comparisonAllStructuresData1$networks[1:10,"Network"])
 ```
 
+Now we use the networkStructures to generate a list of networks to test based directly on two structures given by ourselves. Note that the structures must contain either the characters "+" or "-" and be as long as the number of parameters to estimate.
 
 ```{r}
 structures4testing <- networkStructures(testStructures = c("++++--","+--+--"))
@@ -475,9 +499,8 @@ comparisonTwoStructuresData1 <- compareStructures(data = exampleData1, structure
 data(comparisonTwoStructuresData1)
 ```
 
-
 ```{r}
 comparisonTwoStructuresData1$networks
 ```
 
-Here we see how even in a noisy system, with a good prior guess on proper data structure we can focus the evaluation on a subset of structures and even find better solutions with alternative structures which might explain the data better. In this case the "hunch"" for testing the structure "+--+--" came from knowing the original data structure, but this can come from knowledge from biological information, previous literature research, etc. Testing of different hypothesis is a crucial step when using fitted models to noisy data, and for presentation and further usage of the results. 
+Here we see how even in a noisy system, with a good prior guess on proper data structure we can focus the evaluation on a subset of structures and even find better solutions with alternative structures which might explain the data better. In this case the "hunch"" for testing the structure "+ - - + - - " came from knowing the original data structure, but this can come from knowledge from biological information, previous literature research, etc. Testing of different hypothesis is a crucial step when using fitted models to noisy data, and for presentation and further usage of the results. 
